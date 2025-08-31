@@ -1,0 +1,25 @@
+Section	Description	Importance
+✅ Preface and Legal Notices	Licensing info, how to use docs	💤 Just skim once
+✅ General Information	History, architecture, versioning	⚠️ Good background, not essential
+✅ Installing MySQL	How to install on Linux, Windows, etc.	✅ Must know for local dev
+✅ Upgrading/Downgrading MySQL	Steps and pitfalls when changing versions	⚠️ Learn if managing production systems
+✅ Tutorial	Official beginner's tutorial	✅ Absolutely do it
+✅ MySQL Programs	CLI tools: mysql, mysqldump, mysqladmin, etc.	✅ Must know at least the common ones
+✅ MySQL Server Administration	Managing config files, startup, logs, users	✅ Critical for DevOps, backend
+✅ Security	Passwords, SSL, access control	✅ Important for all real-world apps
+✅ Backup and Recovery	mysqldump, recovery steps, binlog backup	✅ Core for production-ready skills
+✅ Optimization	Query tuning, indexes, performance tips	✅ Must learn for interviews/performance
+✅ Language Structure	SQL grammar, syntax structure	✅ Helps understand MySQL deeply
+✅ Character Sets, Collations, Unicode	Encoding, multilingual data	⚠️ Learn if handling international data
+✅ Data Types	Full explanation of types like DECIMAL, TIMESTAMP	✅ You should know all main ones
+✅ Functions and Operators	All built-in functions (math, string, date, etc.)	✅ High priority, used daily
+✅ SQL Statements	Full list of SQL commands	✅ Yes, especially DDL, DML, DCL
+✅ MySQL Data Dictionary	System metadata (new in MySQL 8.0)	⚠️ Learn if you're doing deep DBA work
+✅ The InnoDB Storage Engine	Transactions, row formats, file storage	✅ Essential (default engine)
+ ✅Replication	Master-slave, async replication	⚠️ Learn if dealing with high-availability
+
+ ✅Stored Objects	Procedures, functions, triggers, events	✅ Must know deeply
+
+✅ Connectors and APIs	Node.js, Python, Java, etc.	✅ Learn based on the language you use
+
+✅ MySQL Workbench	GUI tool for ERD, queries, admin	✅ Must know — used in most dev teams

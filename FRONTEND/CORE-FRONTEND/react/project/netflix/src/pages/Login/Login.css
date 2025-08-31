@@ -1,0 +1,116 @@
+.loginc{
+    position: relative;
+    height: 100vh;
+    --margin-l:50px;
+    --margin-t-b:10px;
+}
+.back-cover{
+    position: absolute;
+    height: inherit;
+    object-fit: cover;
+    /* object-fit: Defines how the content of a replaced
+     element (like <img> or <video>) should be resized to fit its container.
+    cover: The image fills the container, cropping if necessary 
+    (like background-size: cover). */
+    width: 100%;
+    min-width: 50%;
+    min-height: 50%;
+    z-index:1;
+}
+.llogo{
+    position: absolute;
+    z-index: 3;
+    height: 50px;
+    top:20px;
+    left: 20px;
+    filter: drop-shadow(0px 0px 3px rgb(0, 0, 0)) 
+}
+.form{
+    width: max-content;
+    position: absolute;
+    z-index: 2;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    /* Using pixels (px, em, etc.)
+    translate(50px, 0) → moves the element 50px to the right.
+    translate(-50px, 0) → moves it 50px to the left.
+    2. Using percentages (%)
+    ⚠️ This is the special part!
+    Percentages in translate() are calculated based on the element’s own size.
+    translate(50%, 0) → move right by half of its own width.
+    translate(-50%, 0) → move left by half of its own width.
+    translate(0, -50%) → move up by half of its own height.
+    ✅ This is why the centering trick works (translate(-50%, -50%)):
+    It shifts the element exactly by half its width/height, so its center aligns with the parent’s center. */
+
+    background-color: rgb(0, 0, 0);
+    width: 350px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 25px;
+}
+.state{
+    margin-left: var(--margin-l);
+    margin-bottom: 0;
+    padding: 0;
+}
+.fpasw{
+    text-decoration: none;
+    text-decoration-color: none;
+    margin-left: var(--margin-l);
+    color: rgb(197, 192, 192);
+    margin-top: 5px;
+    font-size: 12px;
+}
+
+.form >.email,.password,.sibtnl,.name{
+    width: 250px;
+    height: 30px;
+    box-sizing: border-box;
+    margin-left:var(--margin-l) ;
+    margin-right: var(--margin-l);
+    background-color: rgb(73, 73, 73);
+    border: 1px solid rgb(100, 100, 100);
+}
+.form .email,.password,.name{
+    margin-top: 10px;
+}
+.sibtnl,.subtn{
+    margin-top: 20px;
+    height: 25px;
+    background-color: rgb(255, 79, 79);
+    border-radius: 10px;
+    text-align: center;
+    display: flex;
+    align-items: center;   
+    justify-content: center;
+    border: 1px solid black; 
+    cursor: pointer;
+}
+
+.sibtnl>input,.subtn>input[type="button"]{
+    display: none;
+    
+}
+.subtn{
+    margin: 0;
+    margin-left: 100px;
+}
+.nstate{
+    display: flex;
+    align-items: center;
+    padding: 0;
+    height: 45px;
+    margin-left: 50px;
+    margin-top: 20px;
+}
+.nstate>h3{
+    font-size: 12px;
+    color: rgb(196, 196, 196);
+}
+.nstate>.subtn{
+    margin-left: 15px;
+    width: 100px;
+}

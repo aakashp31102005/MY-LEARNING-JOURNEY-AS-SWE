@@ -1,0 +1,126 @@
+Here is your **7-Day Binary Search Mastery Plan**, with **all problems categorized by pattern** and difficulty. It includes core, advanced, rotated array, optimization, prefix sum, matrix, ternary search, and tricky edge-case binary search problems.
+
+---
+
+## 🗓️ **7-Day Binary Search Mastery Plan (Categorized by Pattern)**
+
+---
+
+### ✅ **Day 1: Core Binary Search + Variants (Foundations)**
+
+**🎯 Goal**: Understand basic binary search and classic variations (lower/upper bound, peaks, etc.)
+
+| Problem                                                                                                                                    | Difficulty | Pattern             |
+| ------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | ------------------- |
+| [LeetCode 704✅ - Binary Search](https://leetcode.com/problems/binary-search/)                                                               | Easy       | Core Search         |
+| [LeetCode 35 ✅- Search Insert Position](https://leetcode.com/problems/search-insert-position/)                                              | Easy       | Lower Bound         |
+| [LeetCode 278✅ - First Bad Version](https://leetcode.com/problems/first-bad-version/)                                                       | Easy       | Monotonic Predicate |
+| [LeetCode 34 ✅- First and Last Position of Element](https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/) | Medium     | Left/Right Bound    |
+| [LeetCode 744✅ - Find Smallest Letter Greater Than Target](https://leetcode.com/problems/find-smallest-letter-greater-than-target/)         | Easy       | Upper Bound         |
+| [GFG - Lower Bound in Sorted Array](https://practice.geeksforgeeks.org/problems/lower-bound-in-a-sorted-array/1)                           | Easy       | Lower Bound         |
+| [LeetCode 852 ✅- Peak Index in a Mountain Array](https://leetcode.com/problems/peak-index-in-a-mountain-array/)                             | Medium     | Peak Finding        |
+| [LeetCode 162✅ - Find Peak Element](https://leetcode.com/problems/find-peak-element/)                                                       | Medium     | Peak Finding        |
+
+---
+
+### ✅ **Day 2: Rotated Sorted Arrays + Edge Duplicates**
+
+**🎯 Goal**: Understand rotated arrays, their edge cases, and duplicates.
+
+| Problem                                                                                                                   | Difficulty | Pattern              |
+| ------------------------------------------------------------------------------------------------------------------------- | ---------- | -------------------- |
+| [LeetCode 33✅ - Search in Rotated Sorted Array](https://leetcode.com/problems/search-in-rotated-sorted-array/)             | Medium     | Rotated              |
+| [LeetCode 81 - Search in Rotated Sorted Array II](https://leetcode.com/problems/search-in-rotated-sorted-array-ii/)       | Medium     | Rotated + Duplicates |
+| [LeetCode 153 - Find Minimum in Rotated Array](https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/)       | Medium     | Rotated Min          |
+| [LeetCode 154 - Find Minimum in Rotated Array II](https://leetcode.com/problems/find-minimum-in-rotated-sorted-array-ii/) | Hard       | Rotated + Duplicates |
+| [LeetCode 1060 - Missing Element in Sorted Array](https://leetcode.com/problems/missing-element-in-sorted-array/)         | Medium     | Arithmetic Gaps      |
+
+---
+
+### ✅ **Day 3: Binary Search on Answer (Monotonic Predicate)**
+
+**🎯 Goal**: Master the technique of binary searching over the answer range (capacity, time, cost).
+
+| Problem                                                                                                                   | Difficulty | Pattern          |
+| ------------------------------------------------------------------------------------------------------------------------- | ---------- | ---------------- |
+| [LeetCode 69 - Sqrt(x)](https://leetcode.com/problems/sqrtx/)                                                             | Easy       | Answer Search    |
+| [LeetCode 374 - Guess Number Higher or Lower](https://leetcode.com/problems/guess-number-higher-or-lower/)                | Easy       | Answer Search    |
+| [LeetCode 1011 - Capacity to Ship Packages](https://leetcode.com/problems/capacity-to-ship-packages-within-d-days/)       | Medium     | Capacity         |
+| [LeetCode 875 - Koko Eating Bananas](https://leetcode.com/problems/koko-eating-bananas/)                                  | Medium     | Speed Range      |
+| [LeetCode 410 - Split Array Largest Sum](https://leetcode.com/problems/split-array-largest-sum/)                          | Hard       | Minimize Max     |
+| [SPOJ - AGGRCOW (Aggressive Cows)](https://www.spoj.com/problems/AGGRCOW/)                                                | Medium     | Maximize Minimum |
+| [LeetCode 1482 - Minimum Days to Make Bouquets](https://leetcode.com/problems/minimum-number-of-days-to-make-m-bouquets/) | Medium     | Monotonic        |
+
+---
+
+### ✅ **Day 4: 2D Matrix + Binary Search in Grid**
+
+**🎯 Goal**: Apply binary search to 2D matrices or grid-like structures.
+
+| Problem                                                                                                                                  | Difficulty | Pattern               |
+| ---------------------------------------------------------------------------------------------------------------------------------------- | ---------- | --------------------- |
+| [LeetCode 74 - Search a 2D Matrix](https://leetcode.com/problems/search-a-2d-matrix/)                                                    | Medium     | Matrix as 1D          |
+| [LeetCode 240 - Search a 2D Matrix II](https://leetcode.com/problems/search-a-2d-matrix-ii/)                                             | Medium     | Row & Col Elimination |
+| [LeetCode 378 - Kth Smallest Element in Sorted Matrix](https://leetcode.com/problems/kth-smallest-element-in-a-sorted-matrix/)           | Medium     | Min Heap + BS         |
+| [GFG - Median in Row-wise Sorted Matrix](https://www.geeksforgeeks.org/find-median-row-wise-sorted-matrix/)                              | Medium     | Answer BS             |
+| [LeetCode 1901 - Find a Peak Element II](https://leetcode.com/problems/find-a-peak-element-ii/)                                          | Hard       | 2D Peak               |
+| [LeetCode 302 - Smallest Rectangle Enclosing Black Pixels](https://leetcode.com/problems/smallest-rectangle-enclosing-black-pixels/)     | Hard       | 2D Bounding           |
+| [LeetCode 668 - Kth Smallest Number in Multiplication Table](https://leetcode.com/problems/kth-smallest-number-in-multiplication-table/) | Hard       | Virtual Matrix BS     |
+
+---
+
+### ✅ **Day 5: Sliding Window + Optimization with BS**
+
+**🎯 Goal**: Combine window techniques with binary search for constraint problems.
+
+| Problem                                                                                                                                         | Difficulty | Pattern        |
+| ----------------------------------------------------------------------------------------------------------------------------------------------- | ---------- | -------------- |
+| [LeetCode 719 - K-th Smallest Pair Distance](https://leetcode.com/problems/find-k-th-smallest-pair-distance/)                                   | Hard       | Distance BS    |
+| [LeetCode 1283 - Find the Smallest Divisor Given a Threshold](https://leetcode.com/problems/find-the-smallest-divisor-given-a-threshold/)       | Medium     | Division Check |
+| [LeetCode 644 - Maximum Average Subarray II](https://leetcode.com/problems/maximum-average-subarray-ii/)                                        | Hard       | Average Range  |
+| [LeetCode 2064 - Minimized Maximum of Products to Store](https://leetcode.com/problems/minimized-maximum-of-products-distributed-to-any-store/) | Medium     | Minimize Max   |
+| [LeetCode 2226 - Max Candies Allocated to K Children](https://leetcode.com/problems/maximum-candies-allocated-to-k-children/)                   | Medium     | Cut Length     |
+
+---
+
+### ✅ **Day 6: Binary Search with Prefix Sums & Trees**
+
+**🎯 Goal**: Combine prefix sums or tree properties with binary search.
+
+| Problem                                                                                                                     | Difficulty | Pattern              |
+| --------------------------------------------------------------------------------------------------------------------------- | ---------- | -------------------- |
+| [LeetCode 325 - Max Subarray Sum Equals K](https://leetcode.com/problems/maximum-size-subarray-sum-equals-k/)               | Medium     | Prefix + HashMap     |
+| [LeetCode 560 - Subarray Sum Equals K](https://leetcode.com/problems/subarray-sum-equals-k/)                                | Medium     | Prefix               |
+| [LeetCode 862 - Shortest Subarray Sum at Least K](https://leetcode.com/problems/shortest-subarray-with-sum-at-least-k/)     | Hard       | Monotonic Queue      |
+| [LeetCode 1658 - Min Operations to Reduce X to Zero](https://leetcode.com/problems/minimum-operations-to-reduce-x-to-zero/) | Medium     | Prefix + Sliding     |
+| [LeetCode 209 - Min Size Subarray Sum](https://leetcode.com/problems/minimum-size-subarray-sum/)                            | Medium     | Prefix + Window      |
+| [LeetCode 108 - Sorted Array to BST](https://leetcode.com/problems/convert-sorted-array-to-binary-search-tree/)             | Easy       | Tree + Mid Recursion |
+| [LeetCode 109 - Sorted List to BST](https://leetcode.com/problems/convert-sorted-list-to-binary-search-tree/)               | Medium     | Tree + Slow/Fast     |
+| [LeetCode 230 - Kth Smallest in BST](https://leetcode.com/problems/kth-smallest-element-in-a-bst/)                          | Medium     | Tree Inorder         |
+| [LeetCode 222 - Count Complete Tree Nodes](https://leetcode.com/problems/count-complete-tree-nodes/)                        | Medium     | Tree Height BS       |
+| [LeetCode 653 - Two Sum IV in BST](https://leetcode.com/problems/two-sum-iv-input-is-a-bst/)                                | Easy       | Tree + Set           |
+
+---
+
+### ✅ **Day 7: Advanced & Ternary Search**
+
+**🎯 Goal**: Combine multiple patterns + learn ternary search.
+
+| Problem                                                                                                         | Difficulty | Pattern                  |
+| --------------------------------------------------------------------------------------------------------------- | ---------- | ------------------------ |
+| [LeetCode 312 - Burst Balloons](https://leetcode.com/problems/burst-balloons/)                                  | Hard       | DP + Interval BS         |
+| [LeetCode 786 - K-th Smallest Prime Fraction](https://leetcode.com/problems/k-th-smallest-prime-fraction/)      | Hard       | Heap + BS                |
+| [LeetCode 1552 - Magnetic Force Between Balls](https://leetcode.com/problems/magnetic-force-between-two-balls/) | Medium     | Ternary / BS on Min Dist |
+| [Ternary Function Optimization Example (Unimodal)](https://cp-algorithms.com/num_methods/ternary_search.html)   | Medium     | Ternary Search           |
+
+---
+
+## ✅ Output Options:
+
+Would you like:
+
+* 📝 A **Markdown checklist file** for Notion/Obsidian?
+* 📋 A **PDF printable plan**?
+* 📄 A shareable **Google Sheet** with progress tracking?
+
+Let me know and I’ll prepare it!

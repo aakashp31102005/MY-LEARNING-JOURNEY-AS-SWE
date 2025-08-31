@@ -1,0 +1,365 @@
+Here’s your updated **MongoDB Mastery Timetable** with the missed topics appropriately inserted into your original schedule. I have grouped them into their respective weeks and days for a seamless learning experience.
+
+---
+
+## 📅 Week 1: MongoDB Basics & CRUD Operations
+
+### **Day 1–2: Introduction to MongoDB**
+- **What is MongoDB?**
+- **NoSQL vs. SQL**
+- **MongoDB Architecture Overview**
+- **MongoDB Data Types**
+  - BSON types (`ObjectId`, `Date`, `Binary`, `Decimal128`).
+  - Differences between JSON and BSON.
+- **MongoDB Shell (mongosh)**
+  - Core commands and navigation.
+  - Using shell helpers (e.g., `it`, `db.stats()`, etc.).
+
+---
+
+### **Day 3–4: CRUD Operations**
+- **Create Operations**
+  - `insertOne()` and `insertMany()`.
+- **Read Operations**
+  - `find()`, `findOne()`, and query filters.
+- **Update Operations**
+  - `updateOne()`, `updateMany()`, `replaceOne()`.
+  - Upserts (`updateOne()` and `updateMany()` with the `upsert` option).
+- **Delete Operations**
+  - `deleteOne()` and `deleteMany()`.
+- **Array Operations**
+  - Modify array fields using `$push`, `$pull`, `$addToSet`, `$pop`.
+- **Query Operators**
+  - `$exists`, `$type`, `$regex`, `$expr`, `$mod`, `$elemMatch`.
+- **Bulk Write Operations**
+  - Use `bulkWrite()` for batch operations.
+- **Advanced Projection**
+  - Dynamically include/exclude fields using `$slice`, `$elemMatch`.
+
+---
+
+### **Day 5: Indexes**
+- **Default `_id` Index**
+- **Creating Custom Indexes**
+- **Compound Indexes**
+- **Special Index Types**
+  - Text, Hashed, Geospatial.
+  - **TTL Indexes**: Automatically expire documents.
+  - **Sparse and Partial Indexes**: Index specific fields/conditions.
+  - **Wildcard Indexes**: Dynamically index flexible schemas.
+
+---
+
+### **Day 6–7: MongoDB Compass**
+- **Installing and Connecting to a Database**
+- **Visualizing Data**
+- **Running Queries**
+- **Creating Indexes and Aggregations**
+  - Build indexes and aggregation pipelines using Compass.
+
+---
+
+## 📅 Week 2: Data Modeling & Aggregation Framework
+
+### **Day 8–9: Schema Design**
+- **Normalization vs. Denormalization**
+- **Embedding vs. Referencing Documents**SS
+- **Data Modeling Best Practices**
+- **Schema Validation**
+  - Enforce data constraints using JSON Schema.
+    Schema design patterns:
+  	Embedding vs referencing, one-to-one, one-to-many, many-to-many
+	Denormalization strategies: When and how to denormalize
+	Document structure: Avoiding deep nesting, array limitations
+	Schema validation: JSON Schema, validation rules
+
+
+
+
+
+Day 10–11: Aggregation Framework**
+📦 Pipeline Stages
+
+Operator	Purpose
+$match	Filter documents (like WHERE)
+$project	Reshape, include/exclude fields
+$group	Group documents, use accumulators
+$sort	Sort documents
+$limit	Limit the number of results
+$skip	Skip a number of results (pagination)
+$lookup	Perform a left outer join
+$unwind	Deconstruct arrays into multiple documents
+$addFields / $set	Add or update fields
+$replaceRoot	Replace the document root
+$facet	Run multiple pipelines in parallel
+$count	Count documents
+$merge / $out	Output results to a collection
+$bucket	Group documents into buckets (by range)
+$bucketAuto	Automatically group into evenly sized buckets
+
+🔧 Other Important Stages
+
+Operator	Purpose
+$redact	Filter nested fields dynamically
+$listSessions	Show active MongoDB sessions
+$densify	Fill in missing data in time series
+$map	Transform elements of an array
+$cond	If-then-else logic
+$switch	Multiple condition logic
+$reduce	Combine array elements into a single value
+
+
+-------------ARRAY COMMON METHODS--------------------
+
+$sum $avg $min $max $first $last $push $addToSet $mergeObjects $stdDevPop $stdDevSamp $top $topN$bottom $bottomN $firstN $lastN $accumulator;
+
+
+---------------AGGREGATE OPERATORS-----------------------
+
+These are must-know, widely used and interview-focused:
+
+🔢 Arithmetic & Computation
+Operator	Purpose
+$add		Add numbers or dates
+$subtract	Subtract values
+$multiply	Multiply
+$divide		Divide
+$mod		Modulus
+
+🔁 Array Handling
+Operator			Purpose
+$arrayElemAt		Get value at specific index in array
+$map				Loop and transform array
+$filter			Filter array elements based on condition
+$size				Get length of array
+$push			Push to array (usually in $group)
+$addToSet			Add unique values to array in $group
+
+
+
+🧠 Conditionals & Logic
+Operator	    				Purpose
+$cond					If-else logic
+$switch					Switch-case logic
+$ifNull					Fallback when null/missing
+$eq, $ne, $gt, $lt, $gte, $lte		Comparisons
+$and, $or, $not				Logical ops
+
+
+🗓️ Date Handling
+Operator									Purpose
+$dateToString								Format date as string
+$toDate		  							Convert to date
+$dateDiff									Difference between two dates
+$year, $month, $dayOfMonth, $hour, $minute, $second	Extract date parts
+
+🧱 Others
+Operator		Purpose
+$concat		Combine strings
+$toString		Convert value to string
+$mergeObjects	Merge embedded documents
+$type	Get		 BSON data type of a field
+$regexMatch	Match strings with regex
+
+📌 Highly Important in Projects & Interviews:
+Area	Operators
+Grouping & Stats			$sum, $avg, $min, $max, $push, $addToSet, $first, $last
+Arrays				$map, $filter, $arrayElemAt, $size
+Conditions				$cond, $ifNull, $switch, comparisons ($eq, $gt, etc.)
+Dates					$dateToString, $toDate, $year, $month, $dateDiff
+Strings 				$concat, $toString, $regexMatch
+Type & Utility			$type, $mergeObjects, $toObjectId
+
+
+Performance Optimization**
+Analyze aggregation performance with `$indexStats`, `$collStats`, `$planCacheStats`.
+
+
+
+
+ **Day 12–13: Geospatial Queries**
+- **Creating Geospatial Indexes**
+  - 2D and 2DSphere indexes.
+- **Executing Geospatial Queries**
+  - `$geoNear`, `$geoWithin`, `$near`.
+- **Location-Based Searches**
+  - Implement real-world location-based search features.
+
+---
+
+### **Day 14: Text Search**
+- **Creating Text Indexes**
+- **Using `$text` Operator**
+- **Text Search Options**
+  - `$search`, `$language`, `$caseSensitive`.
+
+---
+
+## 📅 Week 3: Advanced Topics & Performance Optimization
+
+### **Day 15–16: Replication**
+- **Replica Sets**
+  - Primary, Secondary, Arbiter roles.
+- **Automatic Failover and Election**
+- **Read Preferences and Write Concerns**
+- **Oplog Basics**
+  - Understand how the oplog works for replication.
+- **Delayed Replica Nodes**
+  - Set up delayed nodes for disaster recovery.
+- **Hidden Members**
+  - Configure hidden nodes for analytics/backups.
+
+---
+
+### **Day 17–18: Sharding**
+- **What is Sharding?**
+- **Shard Key Selection**
+  - Best practices and avoiding common pitfalls (e.g., monotonous keys).
+- **Components of Sharding**
+  - Config servers, Mongos routers.
+- **Zone Sharding**
+  - Use zones for geo-aware sharding.
+- **Resharding**
+  - Dynamically reshard collections.
+
+---
+
+### **Day 19–20: Storage Engines**
+- **WiredTiger vs. MMAPv1**
+- **Storage Engine Configuration**
+  - Configure options for performance.
+- **Compression and Journaling**
+
+---
+
+### **Day 21: Performance Optimization**
+- **Query Optimization Strategies**
+- **Using `explain()`**
+  - Analyze query execution plans.
+- **Indexing Strategies**
+- **Query Plans and Cache**
+  - Manage query plans using `planCache`.
+- **Connection Pooling**
+  - Efficiently handle multiple connections.
+- **Data Partitioning**
+  - Avoid hotspots and optimize data placement.
+- **Monitoring Tools**
+  - Use `mongotop`, `mongostat`, and Atlas monitoring.
+
+---
+
+## 📅 Week 4: Security, Transactions & Backup
+
+### **Day 22–23: Security**
+- **Authentication Mechanisms**
+  - SCRAM, LDAP, x.509.
+- **Role-Based Access Control (RBAC)**
+- **TLS/SSL Encryption**
+- **Auditing and Logging**
+- **IP Whitelisting**
+  - Secure network access.
+- **Field-Level Access Control**
+  - Fine-grained control over sensitive fields.
+
+---
+
+### **Day 24–25: Transactions**
+- **ACID Properties**
+- **Using Sessions**
+  - Start, commit, abort multi-document transactions.
+- **Retry Logic**
+  - Handle transient transaction errors.
+- **Deadlock Resolution**
+
+---
+
+### **Day 26–27: Backup & Restore**
+- **Backup Tools**
+  - `mongodump`, `mongorestore`, and Atlas snapshots.
+- **Oplog Backups**
+  - Use oplog for point-in-time recovery.
+- **Cluster-Level Backup**
+  - Backup strategies for sharded clusters.
+
+---
+
+## 📅 Week 5: Real-World Applications & Interview Preparation
+
+### **Day 28: MongoDB Atlas**
+- **Creating and Managing Clusters**
+- **Scaling and Monitoring**
+- **Cloud Backup with Atlas**
+
+---
+
+### **Day 29–30: Project Development**
+- **Build a Full-Stack App**
+  - Node.js + MongoDB + React/Angular.
+- **Authentication & Authorization**
+- **Error Handling & Logging**
+  - Centralized logging for errors.
+
+---
+
+### **Day 31–32: Interview Preparation**
+- **Review Top MongoDB Interview Questions**
+- **Mock Interviews**
+- **System Design Scenarios**
+
+---
+
+## 📅 Week 6: Expert Topics & Ecosystem
+
+### **Day 33–34: Advanced Concepts**
+- **Change Streams**
+  - Real-time change tracking.
+- **Time-Series Collections**
+  - Optimize for time-series data.
+- **Field-Level Encryption**
+  - Queryable encryption for sensitive fields.
+- **Triggers**
+  - Automate tasks with Atlas Triggers.
+- **Serverless Functions**
+  - Write backend logic using Atlas functions.
+
+---
+
+### **Day 35–36: MongoDB Ecosystem**
+- **MongoDB Tools**
+  - `mongoexport`, `mongoimport`, `mongoreplay`.
+- **Integration with Kafka/BI**
+  - MongoDB Kafka and BI connectors.
+- **Migration Strategies**
+  - Migrating from SQL to MongoDB.
+  - Handling schema changes over time.
+
+---
+
+This updated timetable includes all essential topics, ensuring you master MongoDB comprehensively. Let me know if you need further adjustments!
+
+
+
+
+
+
+
+
+✅ Classification of Your List by Operator Type in MongoDB
+Category	Operators Covered
+✅ Query Operators			$eq, $gt, $lt, $gte, $lte, $ne, $in, $nin
+✅ Logical Operators			$and, $or, $not, $nor
+✅ Element Operators			$exists, $type
+✅ Evaluation Operators		$regex, $expr, $mod, $text, $where
+✅ Array Operators			$all, $elemMatch, $size
+✅ Projection Operators		1, 0, $slice, $elemMatch, $meta (used inside projections)
+✅ Update Operators			$set, $unset, $inc, $rename, $addToSet, $push, $pull, $pop, $pullAll, $mul, $min, $max, $currentDate, $bit
+✅ Aggregation Operators		Entire aggregation framework including $match, $group, $project, $sort, $limit, $skip, $unwind, $lookup, $facet, $bucket
+✅ Expression Operators (within aggregation)	$add, $subtract, $multiply, $divide, $cond, $ifNull, $switch, $let
+✅ Accumulator Operators (inside $group)	$sum, $avg, $min, $max, $first, $last, $push, $addToSet
+✅ String Operators					$concat, $substr, $toLower, $toUpper, $trim, $indexOfCP, etc.
+✅ Boolean Operators (within expressions)	$and, $or, $not, $eq, $gt, etc.
+✅ Date Operators					$dateToString, $dayOfWeek, $year, $month, $dayOfMonth, $hour, $minute, $second, $millisecond
+✅ Literal Operator					$literal
+✅ Type Operators					$type
+✅ Variable Operators					$$ROOT, $$CURRENT, $$REMOVE, $$NOW, $$DESCEND
+✅ Comment Operator					$comment (used in queries to annotate/debug)

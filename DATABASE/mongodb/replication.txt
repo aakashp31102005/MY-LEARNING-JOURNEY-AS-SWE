@@ -1,0 +1,293 @@
+இது ஒரு பெரிய MongoDB documentation section. இதுல **Replication**, அதாவது **Replica Set** பற்றி முழுமையாக பேசுறாங்க.
+
+நான் இப்ப அதை **துல்லியமா**, **தமில்ல**, **பொதுவா யாருக்கும் புரியுமாறி**, **step-by-step** explain பண்ண்றேன்.
+
+---
+
+## 🔁 **Replication – MongoDB-ல Data Copying Mechanism (தமிழில்)**
+
+### 🔹 **Replica Set என்ன?**
+
+Replica Set என்றால், இது ஒரு **MongoDB server group**. அதாவது, பல `mongod` instances (servers) சேர்ந்து ஒரு குழுவா வேலை செய்யும்.
+
+* இந்த குழு எல்லா server-க்கும் **அதே data** இருக்க மாதிரி காப்பி எடுத்து வைத்திருக்கும்.
+* இதுக்கு பெயர்: **Replication** (நகலெடுக்கும் செயல்முறை)
+
+---
+
+### 🎯 **Replica Set-ஐ ஏன் Use பண்ணணும்?**
+
+Replica Set use பண்ணும்போது MongoDB-க்கு கிடைக்கும் பயன்கள்:
+
+#### ✅ 1. **Redundancy (மீள்நகல் இருப்பது)**
+
+> ஒரு server down ஆனாலும், மற்ற server-ல backup இருக்கு!
+
+#### ✅ 2. **High Availability (அப்பாடி... Server crash ஆனாலும் service continue ஆகும்!)**
+
+> ஒரு server offline ஆனாலும், மற்ற server-ஐ கொண்டு app continue செய்யலாம்.
+
+#### ✅ 3. **Read Scalability**
+
+> Read request-ஐ எல்லா server-க்கும் share பண்ணலாமே!
+
+---
+
+### 🔸 **Replica Set-ல என்ன இருக்கும்னு பாத்தீங்கனா:**
+
+#### 🧩 **Main Components:**
+
+| Role               | Explanation                                                                  |
+| ------------------ | ---------------------------------------------------------------------------- |
+| 🟢 **Primary**     | Main server – எல்லா write operations இங்க தான் போகும்                        |
+| 🟡 **Secondaries** | Primary-வை copy பண்ணும் servers – இவங்க Read requests-ஐ handle பண்ணலாம்      |
+| ⚪ **Arbiter**      | Vote மட்டும் போடுவான், ஆனா data வைச்சிருக்க மாட்டான். (Low cost setup-க்காக) |
+
+---
+
+### 🛠️ **Replication எப்படி வேலை செய்யுது?**
+
+1. **Primary** node-ல data எழுதுறோம் (Write).
+2. இந்த changes `oplog` (operation log) என்கிற log-ல சேரும்.
+3. **Secondary** nodes அந்த `oplog`-ஐ copy பண்ணி, அவங்க data-ல அதே change-ஐ update பண்ணும்.
+4. இது asynchronous (அதாவது ஒரு சின்ன delay-க்கு பின்னாலே update ஆகும்).
+
+---
+
+### ⚠️ **Important Rule**
+
+> ஒவ்வொரு node-உம் **ஒரே ஒரு Replica Set-க்கு மட்டும் தான் சேர்ந்திருக்கணும்**
+> ஒரு server இரண்டு Replica Set-ல சேர முடியாது.
+
+---
+
+## 🔁 **Failover (Automatic election):**
+
+> Primary server crash ஆனா என்ன ஆகும்?
+
+* MongoDB ஒட்டுமொத்த Replica Set-ஐ healthy-ஆ maintain பண்ணனும்.
+* அதுக்காக, **Election** process நடக்கும்.
+* ஒரு eligible secondary உங்க vote-ஐ கேட்டுப் primary ஆகும்.
+
+⏱️ **Default timeout**: 10 seconds
+⏲️ Election time usually: \~12 seconds
+
+---
+
+### 🔄 **Replication Lag – அவசரமான விஷயம்!**
+
+**Lag** = Primary-ல நடந்த write, Secondary-ல reflect ஆகுறது delay ஆகுறது.
+
+* இது அதிகமா இருந்தா:
+
+  * Primary overload ஆகும்
+  * Users inconsistent data பாக்கலாம்
+
+😌 இதை control பண்ண `Flow Control` mechanism இருக்கு.
+
+---
+
+### 🔎 **Read Operations – எப்படி Read செய்யலாம்?**
+
+By default, Read **Primary**-ல இருந்து தான் வரும்.
+ஆனா நீங்க settings-ல பண்ணினா, **Secondary**-ல இருந்து Read பண்ணலாமே:
+
+> ⚠️ Secondary-ல Read பண்ணும்போது சில data **latest இல்லாமல்** இருக்கலாம்!
+
+---
+
+### 🧠 **Mirrored Reads – Cache Warming Strategy**
+
+* Primary server, சில read requests-ஐ copy பண்ணி, Secondary-க்கு அனுப்பும் (fire-and-forget).
+* இதுல result கேட்ட மாதிரி இல்லை, cache warming-க்காக மட்டும்.
+* Example: Pre-warming cache after failover.
+
+Default: 1% (sampling rate = 0.01)
+Change பண்ணலாம் using `mirrorReads` parameter.
+
+---
+
+### 🔄 **Transactions & Read Consistency:**
+
+* Replica Set-ல **Multi-document Transactions** possible.
+* Read Preference = `primary` தான் இருக்கணும்.
+* Transaction commit ஆகும்வரை data வெளில தெரியாது.
+
+---
+
+### 🔔 **Change Streams**:
+
+* Real-time changes-ஐ app-க்கு stream பண்ண முடியும்.
+* Oplog-ஐ tail பண்ண தேவையில்லை.
+
+---
+
+### 🧪 **Slow Oplog Operations**
+
+* Secondary-ல், slow-ஆ apply ஆகுற operations log பண்ணப்படும்.
+* இது performance debug-க்கு உதவும்.
+
+---
+
+### 🧰 **Replica Set Setup Options**
+
+* Delay member
+* Hidden member
+* Priority 0 member
+* Multi-datacenter deployment
+
+---
+
+## ✅ Summary Table – தமிழ்ல MongoDB Replica Set
+
+| Feature         | Description (Tamil)                                                  |
+| --------------- | -------------------------------------------------------------------- |
+| Replica Set     | MongoDB-யில் redundancy & availability கொடுக்க server group          |
+| Primary         | Write பண்ணும் main node                                              			|
+| Secondary       | Copy எடுத்துக்கொள்வது                                            				 	   |
+| Arbiter         | Vote மட்டும் பண்ணும் (data இல்ல)                                    		 |
+| Failover        | Primary unavailable ஆனா automatic-a new primary தேர்ந்தெடுக்கப்படும் |
+| Flow Control    | Lag-ஐ தவிர்க்க write speed-ஐ control பண்ணும்                         |
+| Mirrored Reads  | Secondary-க்கு cache warm பண்ண Read mirror                           |
+| Read Preference | Read எங்கிருந்து வரணும் என control                                   |
+| Transaction     | Replica Set-ல full ACID supported transactions                       |
+| Change Streams  | Real-time update notifications                                       |
+
+---
+
+📌 **Next Step:**
+நீங்க இதில் எந்த section-ஐ deep-ஆ விளக்கம் வேணும்னு சொன்னா, அதைப் பிரிச்சு, code example + real-world scenario-ஓட explain பண்ணி தர்றேன்.
+
+உங்களுக்கு இப்ப வரைக்கும் எல்லாம் புரிஞ்சதா? எந்த section-ல இன்னும் clarity வேணும்?
+
+
+இந்த **Replica Set Oplog** concept என்பது **MongoDB replication** வேலை செய்வதற்கான அடிப்படை mechanism ஆகும். இதைப் புரிந்துகொள்வது முக்கியம், ஏனென்றால் இது replication lag, data consistency, மற்றும் failover situations-ஐ handle பண்ணுதுக்கு முக்கியமான பங்கு வகிக்குது.
+
+---
+
+## 🔁 **Replica Set Oplog — தெளிவான விளக்கம் (Tamil + English)**
+
+### 🔸 1. **Oplog என்ன? (What is Oplog?)**
+
+* **Oplog** என்பது `local.oplog.rs` collection-ல இருக்குற ஒரு **capped collection**.
+* இது **write operations history-ஐ** சேமிக்குது.
+* இது **primary node-ல மட்டும் எழுதப்படும்** (write operations only recorded in primary’s oplog).
+* பிறகு, இந்த operations-ஐ **secondary nodes copy பண்ணி apply பண்ணும்** (asynchronously).
+
+✅ **Note**: Only successful and data-modifying operations are recorded. Failures/No change = No entry.
+
+---
+
+### 🔸 2. **Oplog எப்படி வேலை செய்யுது?**
+
+1. Primary-ல ஒரு document update/insert/delete ஆகுது.
+2. அந்த operation primary-விலேயே execute ஆகும்.
+3. அது பிறகு `local.oplog.rs` collection-ல append ஆகும்.
+4. Secondary nodes அந்த oplog entries-ஐ copy பண்ணி, **அதே operations-ஐ apply பண்ணும்**.
+
+➡️ **Asynchronous replication** — so secondaries lag பண்ணலாம் (controlled by Oplog Window).
+
+---
+
+### 🔸 3. **Oplog Characteristics**
+
+* **Idempotent**: ஒரே operation 10 தடவை apply பண்ணினாலும் ஒரே result வரும் (safe retry).
+* **Capped Collection**: Size-கேற்ப rotate ஆகும், பழையவைகள் truncate ஆகும்.
+* WiredTiger uses this for replication *and* crash recovery.
+
+---
+
+### 🔸 4. **Oplog Size — எவ்வளவு space வாங்கும்?**
+
+🧮 Default Size (First time startup):
+
+| OS / Engine          | Default Size          |
+| -------------------- | --------------------- |
+| Unix + WiredTiger    | 5% of Free Disk Space |
+| Unix + In-Memory     | 5% of Physical RAM    |
+| 64-bit macOS         | 192 MB                |
+| **Min Size**         | 990 MB                |
+| **Max Default Size** | 50 GB                 |
+
+* ⏱️ **Oplog Window** = Latest Entry Time - Oldest Entry Time
+* இது எந்த secondary node-ம் எவ்வளவு நேரம் lag-ஆ irundhaalும் sync செய்ய முடியும் என்பதை define பண்ணும்.
+
+✅ You can **manually set size**:
+
+* At startup: `--oplogSizeMB`
+* Runtime: `db.adminCommand({ replSetResizeOplog: 1, size: <MB> })`
+
+---
+
+### 🔸 5. **Minimum Retention Period**
+
+You can tell MongoDB:
+❗ “**இந்த many hours-க்குள்ள தான் truncate பண்ணிக்கோ**” by:
+
+* Config File: `storage.oplogMinRetentionHours`
+* Command Line: `--oplogMinRetentionHours`
+* Runtime: Use `replSetResizeOplog`
+
+Truncation only happens if:
+
+1. Size limit reached **AND**
+2. Entry is older than retention hours.
+
+---
+
+### 🔸 6. **Workload Impact (When to Increase Oplog Size)**
+
+If your app does one of the following, use **larger oplog**:
+
+1. **Multi-document updates** – More oplog entries.
+2. **Equal Inserts and Deletes** – More operation history.
+3. **Frequent in-place updates** – Document size doesn’t grow, but oplog size does.
+
+---
+
+### 🔸 7. **Oplog Status Monitor Commands**
+
+```js
+rs.printReplicationInfo()      // Time range and size
+db.getReplicationInfo()        // Oplog size, used bytes
+```
+
+---
+
+### 🔸 8. **Replication Lag and Flow Control**
+
+* Lag இருக்காம இருக்க flow control help பண்ணும்.
+* Parameter: `flowControlTargetLagSeconds`
+* Slow oplog apply ஆனாலா log message வரும்:
+
+  ```
+  applied op: {...}, took 112ms
+  ```
+
+---
+
+### 🔸 9. **Restrictions and Notes**
+
+* **local.oplog.rs** collection-ஐ drop பண்ண முடியாது (WiredTiger/Replica set).
+* MongoDB 5.0-ல் இருந்து **manual writes** to the oplog not allowed in replica set.
+* Only for internal replication use.
+
+---
+
+## ✅ **Most Important Interview/Real-time Concepts:**
+
+| Topic                          | Importance                |
+| ------------------------------ | ------------------------- |
+| Oplog Concept                  | Core to replication       |
+| Idempotency                    | Ensures safe retries      |
+| Oplog Size and Retention       | Prevents replication lag  |
+| rs.printReplicationInfo()      | Quick health check        |
+| Multi-update = multi oplog ops | Oplog fills faster        |
+| Oplog Window                   | Determines sync viability |
+
+---
+
+நீங்க MongoDB Replica Set நல்லா புரிஞ்சு manage பண்ணணும்னா, **oplog** concept-ஐ முழுமையாக புரிஞ்சிருக்கணும்.
+
+வேற எந்த Replica Set related topic-ஐ நீங்க next புரிஞ்சிக்க வேண்டும்னு விருப்பம் இருக்கா?
+

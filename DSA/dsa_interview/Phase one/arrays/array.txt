@@ -1,0 +1,42 @@
+---------------------------------ARRAY------------------------------
+|----	TRICKY BASIC QUESTIONS	[✔️]
+|----1.SUBARRAY
+|----2.PREFIXSUM
+			|--------------Pattern				Usage							Skeleton Available
+				Basic Prefix Sum			        Single subarray sum fast			✅
+				Range Sum Queries			Multiple queries (l,r)  			 307 – Range Sum Query - Mutable(Fenwick/Segment Tree after prefix),,1310 – XOR Queries of a Subarray (!! IMPORTANT)
+				Subarray Sum Equals K			Count subarrays with target sum	✅
+				2D Prefix Sum					Sum of rectangle area			✅
+				Binary Array Equal 0 and 1		Longest subarray with balance	✅
+				Min Size Subarray ≥ Target		Find shortest valid subarray		✅
+
+|----3.TWO POINTER
+	             		PATTERN				Problems(leetcode no.)
+             		----------------------------------------------
+				Forward Two Pointers		167, 15, 11
+				Reverse Two Pointers		344, 88
+				Two-Pointer with Window		3, 845
+				Fast-Slow (Overwrite)		26, 27, 283
+				K-Sum with Sorting		15, 18
+				Validation / Comparison		125, 392
+				Two-Pointer on Condition	42, 977
+
+
+|----4.SLIDING WINDOW
+|                |-------------------Pattern					Explanation (Tamil la)						Problems(leetcode)
+                                                -----------------------------------------------------------------------------------------------
+				Fixed window size			k size window slide pannu				   209, 643, 1004
+				Dynamic shrink/expand		Condition fulfill aagum varai expand, appuram shrink	   3, 76, 438, 567, 424, 340
+				Map / Set-based frequency		Char count track panni window move pannu	   159, 992, 930, 2958
+				Sliding Subarray Sum/Max/Min	Sum/max/min mathiri conditions vechirukkum	   239, 1456, 1493, 1100, 1208, 209
+
+|----5.SORTING AND SEARCHING
+|----6.GREEDY,DP(TABULATION)
+|----7.HASHMAP+FREQUENCY
+|----8.KADENE'S AGORITHM
+|----9.PATTERN MATCHING ALGORITHM
+
+----each topic you have to solve 10-15 problems in leetcode medium and hard
+
+---------------------guspay placed student (PDF PROBLEMS) LIST COMPLETE PANNU-----------------------------
+				

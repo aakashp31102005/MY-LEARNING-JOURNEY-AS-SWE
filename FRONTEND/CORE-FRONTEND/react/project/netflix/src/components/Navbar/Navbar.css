@@ -1,0 +1,155 @@
+.Navbar {
+    width: 100%;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    font-size: 15px;
+    color: #e5e5e5;
+    background: linear-gradient(180deg, rgba(0,0,0,0.8) 10%, transparent 100%);
+    box-sizing: border-box;
+    /* Removed all padding to prevent overlay issues */
+}
+
+.navbar-left {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+}
+
+.navbar-left img {
+    height: 36px;
+    margin-right: 24px;
+}
+
+.navbar-left ul {
+    display: flex;
+    gap: 22px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.navbar-left li {
+    cursor: pointer;
+    transition: color 0.2s;
+    font-weight: 500;
+}
+
+.navbar-left li:hover {
+    color: #fff;
+}
+
+.navbar-right {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+}
+
+.navbar-right img {
+    height: 22px;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+.navbar-right img:hover {
+    opacity: 0.7;
+}
+
+.navbar-right p {
+    margin: 0 8px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.navbar-right p:hover {
+    color: #fff;
+}
+
+.navbar-profile {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(0,0,0,0.3);
+    border-radius: 4px;
+    padding: 2px 6px;
+    position: relative;
+}
+
+.navbar-profile .p-icn {
+    height: 28px;
+    width: 28px;
+    border-radius: 4px;
+    object-fit: cover;
+}
+
+.dropdown {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+    
+}
+
+.s-out {
+    position: absolute;
+    top: 26px;
+    left: -55px;
+    margin: 0;
+    padding: 0;
+    width: 75px;
+    color: rgb(160, 151, 151);
+    background-color: black;
+    visibility: hidden;
+    pointer-events:fill;
+    text-align: center;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.navbar-profile:hover .s-out,.s-out:hover{
+    visibility: visible;
+}
+
+@media (max-width: 900px) {
+    .navbar-left ul {
+        gap: 12px;
+    }
+}
+
+@media (max-width: 700px) {
+    .navbar-left ul {
+        display: none;
+    }
+    .navbar-right p {
+        display: none;
+    }
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+#themel{
+    width: 50px;
+    height: 20px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+   
+}
+#themel:hover{
+    text-shadow: var(--font-clr);
+}
+#theme{
+    display: none;
+}

@@ -1,0 +1,78 @@
+🔁 Transactions & Concurrency Control (Coding-Based Problems)
+✅ Transaction Management (ACID, Isolation Levels, Logs)
+Simulate dirty reads, non-repeatable reads, and phantom reads using multiple sessions and isolation levels in SQL.
+
+Implement an atomic fund transfer between two accounts using START TRANSACTION, COMMIT, ROLLBACK.
+
+Demonstrate cascading rollbacks with dependent transactions and trigger-based changes.
+
+SQL code to log each transaction step into a custom transaction_log table.
+
+Create a function or stored procedure that behaves differently depending on the isolation level.
+
+🔒 Concurrency Control (Locking, MVCC, Timestamps)
+Simulate a deadlock situation between two transactions and resolve it using lock timeout or rollback.
+
+Implement read and write locks manually using SELECT ... FOR UPDATE and row versioning.
+
+Write SQL logic for optimistic concurrency control using version numbers.
+
+Write SQL to maintain consistency of a counter using locking (e.g., view count, stock count).
+
+Create a procedure to test Two-Phase Locking on a table with simulated user access.
+
+♻️ Transaction Recovery
+Write a stored procedure to simulate deferred update with logging.
+
+Demonstrate WAL (Write-Ahead Logging) using manual logging before executing the transaction.
+
+Write an SQL recovery script that performs REDO/UNDO operations using a backup table.
+
+Simulate a crash and recovery scenario using flags or checkpoints stored in a system table.
+
+Use SAVEPOINT and ROLLBACK TO in a complex transaction (e.g., batch order processing).
+
+📂 File Organization & Indexing (Coding/Simulation Problems)
+Manually simulate heap vs sorted file insertion using SQL and observe performance with EXPLAIN.
+
+Create and compare queries using clustered vs non-clustered indexes.
+
+Build a B+ Tree manually in a table and simulate insertions/search logic using stored procedures.
+
+Compare performance of B+ Tree and Bitmap indexes for specific use cases using EXPLAIN ANALYZE.
+
+Simulate static and dynamic hashing using buckets in a table and hashing function in SQL.
+
+⚙️ Query Processing & Optimization (Performance-Oriented Problems)
+Write and optimize a 3-way join query with indexes and analyze using execution plan.
+
+Force a nested loop join or hash join using optimizer hints or query patterns.
+
+Simulate join reordering and measure performance gain using indexing.
+
+Write a stored procedure that dynamically generates query plans based on input.
+
+Benchmark multiple query versions using time, I/O stats, and cost analysis.
+
+🔐 Database Security (Practical & SQL Problems)
+Write a query that simulates SQL Injection, then fix it using parameterized queries or stored procedures.
+
+Create RBAC in SQL using roles, permissions, and stored access control tables.
+
+Implement row-level security using views or WHERE clauses based on user ID/session.
+
+Create a view that hides sensitive fields based on role.
+
+Encrypt and decrypt column data using built-in SQL functions (e.g., AES_ENCRYPT in MySQL, pgcrypto in Postgres).
+
+💡 Bonus: Systems Design-Level Implementation
+Build a mini banking transaction system with rollback and logging.
+
+Implement multi-user inventory update system using locking and transaction isolation.
+
+Design a mock e-commerce checkout to handle order, payment, and stock updates atomically.
+
+Write a procedure that auto-recovers incomplete transactions on system restart.
+
+Monitor and log index usage dynamically for optimization analytics.
+

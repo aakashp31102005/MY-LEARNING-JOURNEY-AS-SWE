@@ -1,0 +1,80 @@
+1. Download the .deb package:
+Go to the MongoDB Compass downloads page. 
+Select your desired version and platform (Ubuntu 64-bit). 
+Download the .deb package. 
+
+
+2. Install using dpkg: 
+Open a terminal.
+Navigate to the directory where you downloaded the .deb file. 
+Run the following command to install: sudo dpkg -i mongodb-compass_<version_number>_amd64.deb 
+
+MongoDB Server Installation Steps (Ubuntu 20.04+)
+--------------------------------------------------
+
+1. Import MongoDB GPG Key:
+
+   curl -fsSL https://pgp.mongodb.com/server-6.0.asc | \
+   gpg --dearmor -o /usr/share/keyrings/mongodb-server-6.0.gpg
+
+--------------------------------------------------
+
+2. Add MongoDB APT Repository:
+
+   echo "deb [ arch=amd64,arm64 signed-by=/usr/share/keyrings/mongodb-server-6.0.gpg ] https://repo.mongodb.org/apt/ubuntu \
+   $(lsb_release -cs)/mongodb-org/6.0 multiverse" | \
+   sudo tee /etc/apt/sources.list.d/mongodb-org-6.0.list
+
+--------------------------------------------------
+
+3. Update Package List:
+
+   sudo apt update
+
+--------------------------------------------------
+
+4. Install MongoDB Server:
+
+   sudo apt install -y mongodb-org
+
+--------------------------------------------------
+
+5. Start MongoDB Service:
+
+   sudo systemctl start mongod
+
+--------------------------------------------------
+
+6. Enable MongoDB to Start on Boot:
+
+   sudo systemctl enable mongod
+
+--------------------------------------------------
+
+7. Check if MongoDB is Running:
+
+   sudo systemctl status mongod
+
+   You should see: Active: active (running)
+
+--------------------------------------------------
+
+8. Connect Using MongoDB Compass:
+
+   Open MongoDB Compass and enter:
+
+   mongodb://localhost:27017
+
+   Then click Connect.
+
+--------------------------------------------------
+
+Optional: Test MongoDB in Terminal
+
+   mongod --version
+   mongo --eval 'db.runCommand({ connectionStatus: 1 })'
+
+--------------------------------------------------
+
+You're done. MongoDB is installed and ready to use.
+

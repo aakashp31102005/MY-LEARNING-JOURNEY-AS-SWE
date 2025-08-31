@@ -1,0 +1,106 @@
+FINAL & COMPLETE 6-MONTH DSA TIMETABLE
+(100% exhaustive, zero skipped, hardcore Google-ready)
+
+✅ Month 1: Fundamentals (Apr 27 – May 26)
+
+Date Range		Topic	Notes
+Apr 27 – May 3		Arrays	Prefix sum, sliding window, difference array
+May 4 – May 10		Strings	Pattern matching, Z-algo, KMP
+May 11 – May 17		Recursion + Backtracking	Subsets, permutations, N-Queens
+May 18 – May 22		🔄 Sorting	Merge sort, Quick sort, Insertion, Count sort
+May 23 – May 26		🔄 Searching	Binary search, Exponential, Ternary, Rotated array
+
+
+✅ Month 2: Classic DSA (May 27 – June 26)
+
+Date Range		Topic	Notes
+May 27 – June 3		Stacks & Queues	Monotonic stack, infix-postfix
+June 4 – June 11	Linked Lists	Reverse, merge, detect cycle
+June 12 – June 15	Hashing	Frequency count, subarrays, maps
+June 16 – June 19	Deques & Sliding Window	Max in window, circular array
+June 20 – June 26	Bit Manipulation	XOR, subsets, masks, binary tricks
+
+
+✅ Month 3: Trees & Graphs (June 27 – July 26)
+
+Date Range			Topic	Notes
+June 27 – July 5			Binary Trees	Traversals, views, height, diameter
+July 6 – July 13			Binary Search Trees	Successors, validate, Kth smallest
+July 14 – July 18			Heaps & Priority Queues	Min/max heaps, custom comparators
+July 19 – July 22			Tries	Prefix search, word dictionary, XOR pairs
+July 23 – July 26	 		Tree Problems (Hard)	LCA, DP on Trees, Binary Lifting
+
+
+✅ Month 4: Algorithms Core (July 27 – Aug 26)
+
+Date Range			Topic	Notes
+July 27 – Aug 4		Greedy	Intervals, scheduling, coin change
+Aug 5 – Aug 14		DP Part 1	0/1 Knapsack, LIS, LCS, Tabulation (matrix chain multiplication optimally)
+Aug 15 – Aug 24		DP Part 2	Subset sum, DP on trees, memoization
+Aug 25 – Aug 26		Bitmask DP	TSP, state compression
+
+
+✅ Month 5: Advanced Data Structures (Aug 27 – Sep 26)
+
+Date Range				Topic		Notes
+Aug 27 – Sep 3			Segment Tree		Lazy propagation, range min/max
+Sep 4 – Sep 7			Fenwick Tree (BIT)	Prefix sum, inversion count
+Sep 8 – Sep 10			Ordered Set / Multiset	Lower bound, order statistics
+Sep 11 – Sep 15			Disjoint Set (DSU)	Union-find, path compression
+Sep 16 – Sep 20			Red-Black Tree / AVL	Rotations, balancing logic
+Sep 21 – Sep 24			Treaps / Splay Trees	Randomized BSTs
+Sep 25 – Sep 26			Rope Data Structure / Cartesian Trees	For substring edits & segment queries
+
+
+✅ Month 6: Graphs + String Algorithms + Edge Topics (Sep 27 – Oct 26)
+
+Date Range				Topic	Notes
+Sep 27 – Oct 3				Graphs Basics	BFS, DFS, components
+Oct 4 – Oct 7				Graphs Advanced	Dijkstra, Bellman-Ford, Floyd-Warshall
+Oct 8 – Oct 11				MST & Topo Sort	Kruskal, Prim, Kahn’s, cycle detection
+Oct 12 – Oct 15				Union-Find in Graphs	Redundant connection, connected islands
+Oct 16 – Oct 20				Trie + Suffix Automata	Aho-Corasick, suffix links, compressed tries
+Oct 21 – Oct 26				Suffix Array / Z Algo / KMP	Full-text search, substring problems
+
+
+🔁 Final 2 Weeks (Oct 27 – Nov 10): Mock + Hardcore Prep
+
+Task					Focus
+Mock Interviews		2–3 per week (Pramp, LeetCode, friends)
+Mixed Topic Days	Mix 4–5 different categories per session
+Timed Practice		60-90 min timed sets
+Revision			Weakest topics or skipped edge cases
+LeetCode 			Contest ModE Optional, to simulate pressure
+
+
+Date Range	Topic	Notes
+Nov 11 – Nov 14			Amortized Analysis	Aggregate, Accounting, Potential, Dynamic Tables
+Nov 15 – Nov 17			B-Trees	Insertion, deletion, structure (for systems prep)
+Nov 18 – Nov 21			Number Theory	GCD, Modular inverse, CRT, RSA
+Nov 22 – Nov 24			Approximation Algorithms	Vertex Cover, TSP, Set Cover (LP based)
+Nov 25 – Nov 27			Linear Programming (Basics)	LP models, duality, simplex intro
+Nov 28 – Nov 30			FFT + Polynomial Multiplication	DFT, FFT, divide & conquer logic
+Dec 1 – Dec 3			NP-Completeness	NP vs P, reductions, Cook-Levin, examples
+Dec 4 – Dec 6			Online Algorithms
+
+
+🧠 NOW COVERED (No More Gaps!):
+✅ Arrays, Strings, Recursion
+✅ Sorting, Searching (advanced variants)
+✅ Stack, Queue, Deque
+✅ Linked List, Hashing
+✅ Bit Manipulation (bitmask, DP, tricks)
+✅ Trees: Binary, BST, LCA, DP on Trees
+✅ Graphs: BFS, DFS, Dijkstra, Bellman, Floyd
+✅ MST, Topo Sort, DSU in graphs
+✅ Tries, Suffix Trees, Automata
+✅ Segment Tree, Fenwick Tree (BIT)
+✅ Treaps, Red-Black, AVL, Splay
+✅ Cartesian Tree, Rope Data Structure
+✅ Dynamic Programming: tabular, memo, bitmask
+✅ Greedy, Backtracking, Sliding Window
+✅ Custom Sorting, Comparators
+✅ Ordered Set / Multiset logic (like C++ STL)
+✅Mathematics and Number Theory:
+✅ Full String Algorithms (Z, KMP, Rabin-Karp, Aho-Corasick)
+

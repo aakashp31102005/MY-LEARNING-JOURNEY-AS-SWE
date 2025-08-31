@@ -1,0 +1,37 @@
+.cards{
+    display: flex;
+    gap:30px;
+    overflow: scroll;
+    scrollbar-width: none;
+    padding-left: 15px;
+    position: relative;
+}
+.card{
+    position: inherit;
+    width: max-content;
+    height: max-content;
+}
+.card img{
+        mask-image: linear-gradient(to top,rgba(0, 0, 0, 0.26) 3%,black 95%);
+}
+
+.card >span{
+    color: rgb(255, 253, 253);
+    position: absolute;
+    z-index: 1;
+    bottom: 19px;
+    left: 20px;
+    font-family: sans-serif ;
+    width: max-content;
+}
+.likebtn{
+    position: absolute;
+    right:10px;
+    bottom: 19px;;
+
+}
+h2{
+    color: aliceblue;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    padding-left: 15px;
+}

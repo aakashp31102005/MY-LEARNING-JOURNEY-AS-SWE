@@ -1,0 +1,122 @@
+### DBMS Advanced Topics - 100 Essential Interview Questions
+
+---
+
+## Week 3: Transactions & Concurrency Control (45 Questions)
+
+### Transaction Management (15 Questions)
+1. Explain each ACID property with real-time banking examples.
+2. Differentiate between consistent state and durable state.
+3. What happens if atomicity is violated? Give examples.
+4. Give an example of a serial schedule and a non-serial schedule.
+5. Construct a schedule and test for conflict serializability.
+6. Construct a schedule and test for view serializability.
+7. Difference between conflict and view serializability.
+8. What are cascading rollbacks? How to prevent them?
+9. Explain the concept of recoverable and non-recoverable schedules.
+10. Compare isolation levels with examples: READ UNCOMMITTED vs READ COMMITTED.
+11. What are phantom reads? In which isolation level can they occur?
+12. How does SERIALIZABLE isolation prevent all anomalies?
+13. Write SQL transactions demonstrating dirty reads and prevent them.
+14. How can locking be used to enforce isolation levels?
+15. What is a transaction log? What is stored in it?
+
+### Concurrency Control (15 Questions)
+16. Describe the Two-Phase Locking Protocol. Prove it guarantees serializability.
+17. What are the limitations of strict 2PL?
+18. What is lock conversion? How is it used in intent locking?
+19. Illustrate a deadlock scenario and how timeout can prevent it.
+20. Compare deadlock prevention vs detection.
+21. What are wait-die and wound-wait protocols?
+22. How does optimistic concurrency control work?
+23. What is timestamp ordering? Give an example schedule.
+24. Compare MVCC with pessimistic locking with examples.
+25. Why does MVCC not need read locks?
+26. Implement optimistic concurrency control in SQL.
+27. Explain deadlock detection using wait-for graphs.
+28. How to implement locking in MySQL for critical sections?
+29. Write SQL code to simulate deadlock.
+30. How to handle concurrency for counters (e.g., page views)?
+
+### Transaction Recovery (15 Questions)
+31. Difference between deferred and immediate update recovery.
+32. What happens if system crashes before COMMIT?
+33. What is the role of checkpoints in recovery?
+34. What is Write-Ahead Logging (WAL)?
+35. Describe UNDO and REDO operations with examples.
+36. Describe the steps in ARIES recovery algorithm.
+37. What is the Dirty Page Table (DPT)?
+38. How are log records written in ARIES?
+39. Why are CLRs (Compensation Log Records) used?
+40. What is a transaction table? How is it maintained?
+41. How shadow paging avoids UNDO?
+42. Limitations of shadow paging?
+43. How does crash recovery differ in MVCC?
+44. Difference between force and no-force policy.
+45. What is idempotence in transaction recovery?
+
+---
+
+## Week 4: Advanced DBMS Concepts (55 Questions)
+
+### File Organization and Indexing (20 Questions)
+46. Compare heap vs clustered vs indexed file organization.
+47. What are the pros and cons of sorted files?
+48. Explain RAID 0, 1, 5 and their use cases.
+49. What is blocking factor? How does it affect I/O cost?
+50. Differentiate primary and secondary indexes.
+51. What is dense vs sparse indexing?
+52. What is a covering index? Give an example.
+53. Explain B-Tree insertion and deletion with example.
+54. Difference between B-tree and B+ tree.
+55. Why is B+ tree better for range queries?
+56. Implement B+ tree manually for given keys.
+57. How does bitmap indexing work?
+58. Advantages of bitmap over B+ tree in OLAP?
+59. What is static vs dynamic hashing?
+60. How are collisions handled in hash indexing?
+61. Explain extendible and linear hashing.
+62. Difference between hash index and clustered index.
+63. How does PostgreSQL implement indexing internally?
+64. How to monitor index usage in SQL?
+65. Write a query to compare performance of indexed vs non-indexed columns.
+
+### Query Processing & Optimization (20 Questions)
+66. What is a query execution plan? How to view it in MySQL/Postgres?
+67. Difference between logical and physical query plan?
+68. Compare nested loop join vs merge join.
+69. What is hash join and when is it preferred?
+70. Why is join order important in optimization?
+71. What is selectivity? How does it affect cost?
+72. How to estimate cost of query in terms of I/O?
+73. What is the role of statistics in query optimization?
+74. What is query plan caching?
+75. Write SQL for joining 3 tables and explain plan.
+76. What is an optimizer hint?
+77. Difference between heuristic and cost-based optimization.
+78. How indexes influence query optimizer decisions?
+79. What is predicate pushdown?
+80. Why might a query use full table scan despite an index?
+81. Write EXPLAIN plan analysis for a complex query.
+82. How to identify and fix slow queries?
+83. How does partitioning help in performance?
+84. What are materialized views? When to use them?
+85. How to benchmark performance of different queries?
+
+### Database Security (15 Questions)
+86. What are the main security threats in DBMS?
+87. How does SQL injection occur? Give an example.
+88. How to prevent SQL injection in Java/PHP/Python?
+89. What is access control? How is it implemented in SQL?
+90. What is Role-Based Access Control (RBAC)?
+91. Compare RBAC and Attribute-Based Access Control (ABAC).
+92. How to grant and revoke permissions in SQL?
+93. What are views and how do they support security?
+94. What is data masking?
+95. What is row-level security?
+96. What is encryption at rest vs in transit?
+97. How does SSL/TLS work in DBMS?
+98. Explain the concept of public key encryption.
+99. What is PKI and how is it related to certificates?
+100. How to implement field-level encryption in MySQL or PostgreSQL?
+

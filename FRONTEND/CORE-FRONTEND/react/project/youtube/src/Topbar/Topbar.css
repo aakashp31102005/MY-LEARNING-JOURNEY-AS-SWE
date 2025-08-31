@@ -1,0 +1,76 @@
+/* -----------------search bar------------------------*/
+
+.Searchdiv{
+    display:flex;
+    align-items: center;
+    border: 1.3px solid black ;
+    justify-content: center;
+    width: 550px;
+    height: 40px;
+}
+.sicn{
+    width: 35px;
+    height: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: 0px 10px 10px 0px;
+}
+.vricn{
+    width: 20px;
+    margin-left: 10px;
+    margin-right: 5px;
+}
+
+
+.Searchbar{
+    border-radius: 10px 0px 0px 10px;
+    border: 1.2px solid black;
+    height: 30px;
+    width: 450px;
+    margin-left: 20px;
+}
+/* -------------------------topbar------------*/
+.hero{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.menuicon{
+    margin-left: 20px;
+}
+.ytlogo,.ytl{
+    display: flex;
+    
+}
+.ytlogo{
+    align-items: center;
+    gap: 20px;
+    margin-right:30px ;
+}
+
+.create{
+    height: 35px;
+    width: 80px;
+    display: flex;align-items: center;justify-content: center;
+    border-radius: 20px;
+    border: 1.2px solid black;
+}
+.notificationicon{
+    width: 30px;
+    height: 30px;
+}
+.profile{
+    width: 30px;
+    height: 30px;
+    background-color: black;
+    border-radius: 100%;
+    margin-right: 10px;
+}
+.lsidetb{
+    display: flex;
+    width: 250px;
+    justify-content: center  ;
+    gap: 30px;
+}

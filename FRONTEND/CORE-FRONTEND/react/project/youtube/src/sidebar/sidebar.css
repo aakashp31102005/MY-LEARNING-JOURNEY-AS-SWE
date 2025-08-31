@@ -1,0 +1,64 @@
+/* default sibebar-----------------------*/
+.icn{
+    width: 30px;
+    height: 30px;
+}
+.sub{
+    width: 39px;
+    height: 39px;
+}
+h5{
+width: max-content;
+height: max-content;
+font-size: 10px;
+margin: 0;
+
+}
+.outer{
+    width: 60px;
+    height: 75px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.outer:hover{
+    background-color: rgba(177, 178, 180, 0.522);
+}
+.sbdft{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 70px;
+    height: 100vh;
+}
+
+/*   ------------sidebar onclick-----------------*/
+
+
+.sdbronclk{
+    height: 100vh;
+    overflow-y:scroll ;
+    width: max-content;
+}
+.items {
+    border: 2px solid black;
+    width: 150px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    font-size: 15px;
+    cursor:pointer;
+    transition:background-color 0.2s ease-out ;
+    font-family: 'Inter', sans-serif;
+    padding-left:10px ;
+    box-sizing: border-box;
+
+}
+.items:hover{
+    background-color: rgb(194, 197, 197);
+
+}

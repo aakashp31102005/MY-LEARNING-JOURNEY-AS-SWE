@@ -1,0 +1,8 @@
+| Pattern            | Use Case                    | Must-Know Problem |
+| ------------------ | --------------------------- | ----------------- |
+| Monotonic Stack    | Next greater/smaller        | LC 739, 496, 84   |
+| Valid Parentheses  | Matching expressions        | LC 20, 32         |
+| Backtracking Stack | Nested parsing, decoding    | LC 394, 150       |
+| Min Stack          | Design question w/ O(1) min | LC 155            |
+| Greedy + Stack     | Lex order, optimal removal  | LC 402, 316       |
+

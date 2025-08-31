@@ -1,0 +1,32 @@
+Date	Sorting Technique	Tasks/Problems
+May 2, 2025	Insertion Sort	Solve 5 problems (arrays, dynamic arrays, linked lists).
+May 3, 2025	Bubble Sort	Solve 5 problems (arrays, edge cases like duplicates or reverse order).
+May 4, 2025	Selection Sort	Solve 5 problems (arrays, rank-based sorting problems).
+May 5, 2025	Merge Sort	Solve 5 problems (arrays, linked lists, inversion counts).
+May 6, 2025	Quick Sort	Solve 5 problems (arrays, partition logic, k-th element problems).
+May 7, 2025	Counting Sort	Solve 5 problems (frequency counting, sorting with limited range).
+May 8, 2025	Radix Sort	Solve 5 problems (sorting large numbers, digit-based sorting).
+May 9, 2025	Heap Sort	Solve 5 problems (priority queue, top-k problems).
+May 10, 2025	Review Day	Revisit any weak techniques and solve a mix of 5 problems.
+Phase 2: Sorting-Based Patterns
+Duration: 16 Days (May 11 – May 26)
+Goal: Apply sorting-related patterns to solve diverse problems.
+
+Date Range	Pattern	Tasks/Problems
+May 11 – May 13, 2025	Two Pointers After Sorting	Solve 15 problems (3 days × 5 problems/day). Focus: intervals, closest pairs, 3-sum.
+May 14 – May 15, 2025	Counting Sort-Like Logic	Solve 10 problems (2 days × 5 problems/day). Focus: frequency-based problems, bucket-like sorting.
+May 16 – May 17, 2025	Custom Sorting with Comparators	Solve 10 problems (2 days × 5 problems/day). Focus: custom rules for sorting (e.g., relative sort).
+May 18, 2025	Bucket/Radix Sort Applications	Solve 5 problems. Focus: digit-based sorting or large range of numbers.
+May 19 – May 20, 2025	Greedy with Sorted Array	Solve 10 problems (2 days × 5 problems/day). Focus: intervals, tasks, or scheduling problems.
+May 21 – May 22, 2025	Sliding Window After Sorting	Solve 10 problems (2 days × 5 problems/day). Focus: subarray and window problems.
+May 23 – May 24, 2025	Heap-Based Sorting Patterns	Solve 10 problems (2 days × 5 problems/day). Focus: top-k, merge k-sorted lists, and priority queues.
+May 25 – May 26, 2025	Sorting with Prefix Sums/Binary Search	Solve 10 problems (2 days × 5 problems/day). Focus: prefix sums, binary search after sorting.
+Phase 3: Advanced Practice and Review
+Duration: 7 Days (May 27 – June 2)
+Goal: Consolidate knowledge by solving mixed problems and advanced challenges.
+
+Date Range	Task
+May 27 – May 29, 	Solve 15 mixed sorting-based problems (5/day). Focus: weak areas.
+May 30 – May 31, 	Solve 10 advanced problems (5/day). Focus: harder variations.
+June 1, 2025		Create and solve your own problems; practice explaining solutions.
+June 2, 2025		Final review: Solve 5 random LeetCode problems and assess readiness.

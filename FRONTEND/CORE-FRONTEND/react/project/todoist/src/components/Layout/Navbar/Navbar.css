@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Changa+One:ital@0;1&display=swap');
+
+.wholenavbar{
+width: 100vw;
+display: flex;
+align-items: center;
+justify-content: center;
+height: 80px;
+flex-shrink: 1;
+}
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 45px;
+    width: 100%;
+}
+.leftbar{
+    margin-left: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: var(--lb-height);
+
+}
+#logoicn{
+    height:30px;
+    width: 30px;
+    border-radius: 5px;
+}
+#wname{
+    font-size:var(--lfont-size);
+    font-family: var(--font-style);
+    color: var(--font-color);
+    margin:0;margin-left: 10px;
+}
+.rightbar .rbarc{
+   list-style-type: none;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   
+}
+
+#madefr,#rsc,#price,#login,#signup{
+    width: var(--rbar-width);
+    font-size: var(--font-size) ;
+    font-family: var(--font-style);
+    font-weight: 100;
+    color: var(--bodyfc);
+    height: var(--rbar-height);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition-property: display;
+    transition-duration: 0.2;
+    transition-timing-function: ease-in;
+    
+}
+.sp{
+    margin: 5px;
+}
+
+#start{
+display: none;
+}
+#startbtn{
+    cursor: pointer;
+    width: 85px;
+    height: 40px;
+    background-image: linear-gradient(40deg,var(--font-color) ,rgb(222, 121, 121));
+     display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+   color: rgb(255, 255, 255);
+    font-weight: bold;
+}
+
+#madefr:hover,#rsc:hover,#price:hover,#login:hover{
+    background-color: rgba(229, 235, 235, 0.564);
+    border-radius: 10px;
+}
+
+
+@media (max-width:690px){
+  #madefr{
+    display: none;
+  }
+}
+@media(max-width:590px){
+  #rsc{
+    display: none;
+  }
+}
+@media (max-width:490px){
+  #price,.sp,#login{
+    display: none;
+  }
+}
