@@ -1,0 +1,94 @@
+
+.nav{
+    height: max-content;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 0.5rem;
+}
+.left{
+    height: inherit;
+    display: flex;
+}
+.left>li{
+    width: max-content;
+    display: flex;
+    box-sizing: border-box;
+    padding: 8px ;
+    height: max-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.left>li>.logo{
+    width: clamp(1.5rem,2.0rem,2.3rem);
+    height: clamp(1.5rem,2.0rem,2.2rem);
+    border-radius: 0.5rem;
+    margin-right: 5px;
+}
+.left>li>h1{
+font-size: clamp(1.5rem,2rem, 2.5rem);
+    color: rgb(207, 84, 84);
+    margin: 0;
+    text-align: center;
+}
+.right{
+    height: inherit;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 0.5rem;
+}
+.menuicn{
+    display: inline-block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+font-size: clamp(1.5rem,2rem, 2.5rem);
+    height: 3.5rem;
+    width: 70px;
+    color: rgb(202, 102, 102);
+    margin-right: 2rem;
+    padding-bottom: 5px;
+}
+.mlgbtn{
+    display: none;
+}
+.right>ul{display: none;}
+
+
+@media(min-width:1048px){
+    .menuicn{
+        display: none;
+    }
+    .right>ul{
+        display: inline-block;
+    }
+    .right>ul{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: max-content;
+    margin-right: 1rem;
+
+}
+.loginbtn{
+    background-color: rgb(230, 108, 108);
+    font-weight: 600;color: white;
+}
+.font,.loginbtn{
+    font-size: clamp(1.3rem,1rem,2rem);
+    padding: 0.7rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    box-sizing: content-box;
+    margin: 0;
+    margin-left: 2px;
+    margin-right: 2px;
+
+}
+.font:hover,.loginbtn:hover{
+    background-color: rgba(203, 206, 203, 0.507);
+}
+
+}

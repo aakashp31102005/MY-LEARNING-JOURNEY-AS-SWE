@@ -1,0 +1,23 @@
+.item1 {
+  width: 100px;
+  height: 100px;
+  background-color: green;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-radius 0.5s ease-in 0.2s;
+}
+.item1__image {
+  width: 25px;
+  height: 25px;
+  background-color: pink;
+}
+.item1__image--smimage {
+  width: 25px;
+  height: 10px;
+  background-color: #3498db;
+}
+.item1:hover {
+  cursor: pointer;
+  border-radius: 20px;
+}/*# sourceMappingURL=style.css.map */

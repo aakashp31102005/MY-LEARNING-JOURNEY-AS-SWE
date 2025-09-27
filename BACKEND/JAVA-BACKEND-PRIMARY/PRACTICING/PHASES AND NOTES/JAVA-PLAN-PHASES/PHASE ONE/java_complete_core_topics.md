@@ -399,26 +399,112 @@
   - Static factory methods
   - Serialization-based cloning
 
-#### 2.6.3 Nested Classes
-- **Static Nested Classes**
-  - Declaration and access
-  - Relationship with outer class
-  - Usage scenarios
+Absolutely! Here’s a **comprehensive, structured list of Java Inner Class topics** including all practical scenarios, interview patterns, and coding usage. I’ve combined the main types with the “missed scenarios” I mentioned earlier.
 
-- **Inner Classes (Non-static)**
-  - Access to outer class members
-  - Implicit outer class reference
-  - Instantiation requirements
+---
 
-- **Local Inner Classes**
-  - Classes inside methods
-  - Access to local variables (effectively final)
-  - Limited scope usage
+## **2.6.3Java Inner Classes – Complete Topics & Subtopics**
 
-- **Anonymous Inner Classes**
-  - Unnamed class implementations
-  - Interface/abstract class implementation
-  - Event handling usage
+---
+
+### **1. Static Nested Classes**
+
+* Declaration and syntax
+* Relationship with outer class
+
+  * No implicit reference to outer class instance
+* Accessing outer class static members
+* Usage scenarios
+
+  * Utility/helper classes
+  * Grouping related classes logically
+* Static members in nested classes
+* Generics with static nested classes
+* Serialization considerations
+
+---
+
+### **2. Inner Classes (Non-static)**
+
+* Declaration and syntax
+* Access to outer class members
+
+  * Implicit outer class reference
+  * Using `Outer.this` to resolve shadowing
+* Instantiation requirements
+
+  * Must have an instance of the outer class
+* Shadowing of outer class fields
+* Usage scenarios
+
+  * Encapsulating related functionality
+  * Maintaining logical association with outer class
+* Generics in inner classes
+* Access modifiers (`private`, `protected`, `default`, `public`)
+* Limitations
+
+  * Cannot have static members (except constants)
+
+---
+
+### **3. Local Inner Classes**
+
+* Classes declared inside methods
+* Scope limited to the enclosing method
+* Access to local variables
+
+  * Only **effectively final** variables
+* Instantiation inside the method
+* Usage scenarios
+
+  * Algorithm-specific helpers
+  * Callbacks within a method
+* Limitations
+
+  * Cannot be accessed outside the method
+  * Cannot have static members
+
+---
+
+### **4. Anonymous Inner Classes**
+
+* Unnamed class implementations
+* Can implement interfaces or extend abstract/concrete classes
+* Syntax and instantiation
+* Usage scenarios
+
+  * Event handling (GUI, listeners)
+  * Runnable/Callable for threading
+  * Quick one-time implementations
+* Limitations
+
+  * Cannot declare constructors
+  * Cannot have static members
+  * Serialization issues
+* Replaced by Lambda expressions in functional interfaces
+
+---
+
+### **5. Advanced/Additional Scenarios**
+
+* **Shadowing**: resolving outer class members using `Outer.this`
+* **Inheritance**: inner classes extending other classes or implementing interfaces
+* **Multiple levels of nesting**: inner classes inside inner classes
+* **Access modifiers**: public/private/protected/default
+* **Generics**: inner classes inheriting or declaring type parameters
+* **Serialization**: anonymous and local inner classes considerations
+* **Multithreading patterns**: Runnable/Callable inner classes
+* **Method references and callbacks**: context-related usage
+
+---
+
+✅ **Coverage Summary**
+
+* All **types of inner classes**: static nested, inner, local, anonymous
+* All **access and binding scenarios**
+* Shadowing, generics, multithreading, serialization, modifiers
+* Covers **real-world coding** and **interview questions**
+
 
 #### 2.6.4 final Keyword
 - **final Variables**
@@ -846,6 +932,8 @@
   - available() and skip() methods
   - close() and resource management
   - try-with-resources usage
+
+## 8.2.2 PERFORMANCE MEASUREMENT OF PROGRAMS IN JAVA
 
 ### 8.3 Character Streams
 - **Reader Hierarchy**

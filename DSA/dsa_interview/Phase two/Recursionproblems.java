@@ -37,7 +37,63 @@ public class Recursionproblems {
         s.remove(l2);
         System.out.println(s);
         System.out.println(subsetsWithDup(new int[]{1,2,2}));
+        subset("abc");
+        System.out.println(permuteUnique(new int[]{1,1,2}));
+        nextPermutation(new int[]{2,3,1});
     }
+    public static List<List<Integer>> permuteUnique(int[] nums) {
+            List<List<Integer>> ll=new ArrayList<>();
+            StringBuilder input=new StringBuilder();
+            for(int e:nums){input.append(e);};
+             permutationhelper(ll,new StringBuilder(),new StringBuilder(input));
+             return ll;
+    }
+    public static void permutationhelper(List<List<Integer>> ll,StringBuilder proc,StringBuilder unproc){
+        if(unproc.isEmpty()){
+            List<Integer> l=new ArrayList<>();
+            for(char c:proc.toString().toCharArray()){
+                l.add(c-'0');
+            }
+                if(!ll.contains(l)){ll.add(l);};
+                return;
+        }
+        for(int i=0;i<unproc.length();i++){
+            char ch=unproc.charAt(i);
+            proc.append(unproc.charAt(i));
+            unproc.deleteCharAt(i);
+
+            permutationhelper(ll,proc,unproc);
+
+            unproc.insert(i,ch);
+            proc.deleteCharAt(proc.length()-1);
+        }
+    }
+    public static  void nextPermutation(int[] nums) {
+    nextpermutationhelper(Integer.MIN_VALUE,nums,new int[nums.length],new boolean[nums.length],0);
+    }
+    public static void nextpermutationhelper(int max, int[] nums, int[] holder, boolean[] stts, int startindex) {
+        if (startindex == nums.length) {
+            String temp = "";
+            for (int e : holder) {
+                temp += e;
+            }
+            int m = Integer.parseInt(temp);
+            if (m > max) {
+                System.out.println(m);
+            }
+            return;
+        }
+
+        for (int i = 0; i < nums.length; i++) {
+            if (!stts[i]) {
+                holder[startindex] = nums[i];
+                stts[i] = true; // mark element i as used
+                nextpermutationhelper(max, nums, holder, stts, startindex + 1);
+                stts[i] = false; // backtrack
+            }
+        }
+    }
+
 
     public static void maxmin(int i,int max,int min,int[] arr){
         if(i >= arr.length){
@@ -152,6 +208,107 @@ public class Recursionproblems {
             }
         }return false;
     }
+    public static void subset(String str){
+//        subsethelper(str,0,"");
+//            subsetsumhelperarr(new int[]{1,2,3},0,0,5);
+        System.out.println(targetsum(new int[]{1,1,1,1,1},0,0,3)); ;
+    }
+    public static  void subsethelper(String str,int startindex,String temp){
+        if(startindex>=str.length()){
+            return;
+        }
+        for(int i=startindex;i<str.length();i++){
+            String tempval=temp+ str.charAt(i);
+            System.out.println(tempval);
+            subsethelper(str,i+1,tempval);
+        }
+    }
+    public static  void subsetsumhelperarr(int[] arr,int startindex,int tempsum,int target){
+        if(tempsum == target){
+            System.out.println(true);
+            return;
+        }
+        if(startindex>=arr.length){
+            return;
+        }
+        for(int i=startindex;i<arr.length;i++){
+            int tempval=tempsum+arr[i];
+            subsetsumhelperarr(arr,i+1,tempval,target);
+        }
+    }
+    public static  int targetsum(int[] arr,int startindex,int tempsum,int target){
+        if(startindex==arr.length){
+            if(tempsum ==target) {
+                return 1;
+            }
+            return 0;
+        }
+            int i=startindex;
+            int postiveval=tempsum+arr[i];
+            int count=0;
+            count+=targetsum(arr,i+1,postiveval,target);
+            int negativeval=tempsum-arr[i];
+            count+=targetsum(arr,i+1,negativeval,target);
+            return count;
+        }
+    public boolean canPartition(int[] nums) {
+        int sum = Arrays.stream(nums).sum();
+        if (sum % 2 != 0) return false;
+        return partitionHelper(nums, 0, 0, sum / 2);
+    }
 
-}
+    private boolean partitionHelper(int[] arr, int start, int tempSum, int target) {
+        if (tempSum == target) return true;
+        if (tempSum > target || start >= arr.length) return false;
+
+        return partitionHelper(arr, start + 1, tempSum + arr[start], target)
+                || partitionHelper(arr, start + 1, tempSum, target);
+    }
+    public boolean canPartitionbt(int[] nums) {
+        int sum = Arrays.stream(nums).sum();
+        if (sum % 2 != 0) return false;
+        return partitionhelperbt(nums, 0, 0, sum / 2);
+    }
+
+    public boolean partitionhelperbt(int[] arr, int start, int tempSum, int target) {
+        if (tempSum == target) {
+            return true;   // found one subset
+        }
+        if (tempSum > target || start >= arr.length) {
+            return false;  // invalid path
+        }
+
+        boolean result = false;
+        for (int i = start; i < arr.length; i++) {
+            // explore including arr[i]
+            if (partitionhelperbt(arr, i + 1, tempSum + arr[i], target)) {
+                return true;  // short-circuit if found
+            }
+        }
+        return result;
+    }
+        public ListNode mergeTwoLists(ListNode list1, ListNode list2) {
+            return mergeLists(list1,list2);
+        }
+        public ListNode mergeLists(ListNode l1, ListNode l2) {
+            if (l1 == null) return l2;
+            if (l2 == null) return l1;
+            if (l1.val <= l2.val) {
+                l1.next = mergeLists(l1.next, l2);
+                return l1;
+            } else {
+                l2.next = mergeLists(l1, l2.next);
+                return l2;
+            }
+        }
+
+    }
+
+ class ListNode {
+      int val;
+      ListNode next;
+      ListNode() {}
+      ListNode(int val) { this.val = val; }
+ ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+ }
 

@@ -1,0 +1,28 @@
+Vanilla JS
+    │
+    ▼
+ReactJS
+    │
+    ▼
+NextJS
+    │
+    ▼
+TypeScript
+    │
+    ▼
+Node.js
+    │
+    ▼
+Express.js
+    │
+    ▼
+Database (MongoDB / PostgreSQL)
+    │
+    ▼
+Authentication (JWT / OAuth)
+    │
+    ▼
+Advanced Backend Topics
+    │
+    ▼
+Full-Stack Integration (Next.js + Node.js + DB)

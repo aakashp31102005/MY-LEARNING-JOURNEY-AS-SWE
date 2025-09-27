@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Bouncing Ball (DOM + requestAnimationFrame)</title>
+<style>
+  html,body { height:100%; margin:0; }
+  .stage {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(180deg, #e8f0ff, #ffffff);
+    overflow: hidden;
+    touch-action: none; /* prevent default gestures interfering */
+  }
+
+  .ball {
+    position: absolute; /* we use transforms for movement */
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 30% 30%, #fff 6%, #ff6b6b 20%, #ff3b3b 100%);
+    box-shadow: 0 8px 18px rgba(0,0,0,0.18), inset 0 -6px 20px rgba(0,0,0,0.06);
+    will-change: transform;
+    touch-action: none;
+    user-select: none;
+    cursor: grab;
+  }
+
+  .ball:active { cursor: grabbing; }
+  .controls {
+    position: absolute;
+    left: 12px;
+    top: 12px;
+    background: rgba(255,255,255,0.9);
+    padding: 8px 10px;
+    border-radius: 8px;
+    font-family: sans-serif;
+    font-size: 13px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  }
+</style>
+</head>
+<body>
+  <div class="stage" id="stage" aria-label="Animation stage">
+    <div class="ball" id="ball" role="img" aria-label="Bouncing ball"></div>
+    <div class="controls">
+      Click/tap the ball to add impulse. Resize the window to see bounds adjust.
+    </div>
+  </div>
+
+<script>
+(() => {
+  const stage = document.getElementById('stage');
+  const ballEl = document.getElementById('ball');
+
+  // Physical state (units: pixels and seconds)
+  const state = {
+    x: 100,             // center x
+    y: 100,             // center y
+    vx: 200,            // px/s
+    vy: 0,              // px/s
+    radius: 30,         // px (half of width/height)
+  };
+
+  // Physics parameters
+  const physics = {
+    gravity: 1200,      // px/s^2 downward
+    restitution: 0.75,  // bounce energy retention (0..1)
+    friction: 0.995,    // horizontal damping on every bounce/frame (0..1)
+    maxVy: 5000,        // clamp vertical velocity
+  };
+
+  let stageW = stage.clientWidth;
+  let stageH = stage.clientHeight;
+  function updateStageSize() {
+    stageW = stage.clientWidth;
+    stageH = stage.clientHeight;
+  }
+  window.addEventListener('resize', updateStageSize);
+
+  // Use translate to position: we keep x,y = center position
+  function render() {
+    const left = state.x - state.radius;
+    const top = state.y - state.radius;
+    // Using translate3d gives the compositor a hint for GPU acceleration
+    ballEl.style.transform = `translate3d(${left}px, ${top}px, 0)`;
+  }
+
+  // animation loop with delta time
+  let lastTime = performance.now();
+  let running = true;
+  function step(now) {
+    if (!running) return;
+    const dt = Math.min((now - lastTime) / 1000, 0.0333); // cap dt to avoid big jumps (30ms)
+    lastTime = now;
+
+    // integrate physics (semi-implicit Euler)
+    state.vy += physics.gravity * dt;
+    // clamp velocity to avoid runaway
+    state.vy = Math.max(Math.min(state.vy, physics.maxVy), -physics.maxVy);
+
+    state.x += state.vx * dt;
+    state.y += state.vy * dt;
+
+    // handle collisions with walls/floor/ceiling
+    const leftBound = state.radius;
+    const rightBound = stageW - state.radius;
+    const topBound = state.radius;
+    const bottomBound = stageH - state.radius;
+
+    // Horizontal collisions (left/right)
+    if (state.x < leftBound) {
+      state.x = leftBound;
+      state.vx = -state.vx * physics.restitution;
+      // small friction on bounce
+      state.vx *= physics.friction;
+    } else if (state.x > rightBound) {
+      state.x = rightBound;
+      state.vx = -state.vx * physics.restitution;
+      state.vx *= physics.friction;
+    }
+
+    // Vertical collisions (top/bottom)
+    if (state.y < topBound) {
+      state.y = topBound;
+      state.vy = -state.vy * physics.restitution;
+      state.vx *= physics.friction;
+    } else if (state.y > bottomBound) {
+      state.y = bottomBound;
+      state.vy = -state.vy * physics.restitution;
+      // tiny correction: if bounce is very small, zero it to settle
+      if (Math.abs(state.vy) < 10) state.vy = 0;
+      state.vx *= physics.friction;
+    }
+
+    render();
+    requestAnimationFrame(step);
+  }
+
+  // Start loop
+  requestAnimationFrame((t) => { lastTime = t; requestAnimationFrame(step); });
+
+  // Click / pointer impulse: add velocity away from pointer
+  ballEl.addEventListener('pointerdown', (e) => {
+    e.preventDefault();
+    // get pointer relative to stage
+    const rect = stage.getBoundingClientRect();
+    const px = e.clientX - rect.left;
+    const py = e.clientY - rect.top;
+    // vector from pointer to current ball center
+    const dx = state.x - px;
+    const dy = state.y - py;
+    // add impulse proportional to distance
+    const impulseFactor = 6; // tweak for stronger/weaker push
+    state.vx += dx * impulseFactor;
+    state.vy += dy * impulseFactor * 0.6; // give some vertical push
+    // capture pointer so dragging won't cause default
+    ballEl.setPointerCapture(e.pointerId);
+  });
+
+  // Optional: drag to move ball directly
+  let dragging = false;
+  ballEl.addEventListener('pointerdown', (e) => {
+    dragging = true;
+    ballEl.style.cursor = 'grabbing';
+    lastDrag = { id: e.pointerId, x: e.clientX, y: e.clientY };
+  });
+
+  let lastDrag = null;
+  stage.addEventListener('pointermove', (e) => {
+    if (!dragging || !lastDrag) return;
+    const rect = stage.getBoundingClientRect();
+    const nx = e.clientX - rect.left;
+    const ny = e.clientY - rect.top;
+    // move center to pointer
+    state.x = nx;
+    state.y = ny;
+    // zero velocity while dragging
+    state.vx = 0;
+    state.vy = 0;
+    render();
+  });
+
+  stage.addEventListener('pointerup', (e) => {
+    if (dragging && lastDrag && e.pointerId === lastDrag.id) {
+      dragging = false;
+      lastDrag = null;
+      ballEl.style.cursor = 'grab';
+      ballEl.releasePointerCapture(e.pointerId);
+    }
+  });
+
+  // Initialize size & position
+  updateStageSize();
+  // center ball
+  state.x = stageW / 2;
+  state.y = stageH / 4;
+  render();
+
+})();
+</script>
+</body>
+</html>

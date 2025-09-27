@@ -104,25 +104,143 @@
 ## 2. SPRING FRAMEWORK ECOSYSTEM MASTERY
 
 ### 2.1 Spring Core & Advanced IoC
-- **Dependency Injection Deep Dive**
-  - Constructor vs setter vs field injection
-  - Circular dependency resolution
-  - Bean scopes (singleton, prototype, request, session, application)
-  - Bean lifecycle and initialization callbacks
-  - Custom bean post processors
-  - Conditional beans and profiles
-  - Configuration properties and externalized configuration
+## 🔹 2.1.1 Core Container & Dependency Injection
 
-- **Advanced Spring Core**
-  - ApplicationContext vs BeanFactory
-  - Event-driven programming with ApplicationEvents
-  - Resource abstraction and property resolution
-  - SpEL (Spring Expression Language)
-  - Aspect-Oriented Programming (AOP)
-    - Pointcut expressions and advice types
-    - Custom aspects and cross-cutting concerns
-    - AOP proxies (JDK dynamic proxy vs CGLIB)
-    - Transaction management with AOP
+* **IoC & DI concepts**
+
+  * Inversion of Control, Dependency Injection (DI)
+  * Constructor injection vs Setter injection vs Field injection
+  * Circular dependency resolution strategies
+* **Bean definition & registration**
+
+  * `@Bean`, `@Component`, `@ComponentScan`
+  * `@Import`, `@Configuration`, `@Lazy`
+  * Programmatic registration (`BeanDefinitionRegistry`)
+* **Scopes**
+
+  * Singleton, Prototype, Request, Session, Application, WebSocket
+  * Custom scopes
+
+---
+
+## 🔹 2.1.2 Bean Lifecycle & Extensibility
+
+* **Bean lifecycle phases**
+
+  * Instantiation → Dependency injection → Initialization → Destruction
+* **Initialization & destruction callbacks**
+
+  * `@PostConstruct`, `@PreDestroy`, `InitializingBean`, `DisposableBean`
+* **Post-processors**
+
+  * `BeanPostProcessor`, `BeanFactoryPostProcessor`
+  * `BeanDefinitionRegistryPostProcessor`
+  * Custom post processors
+* **Aware interfaces**
+
+  * `BeanNameAware`, `ApplicationContextAware`, `EnvironmentAware`, etc.
+
+---
+
+## 🔹2.1.3 Configuration & Environment
+
+* **Profiles & conditional beans**
+
+  * `@Profile`, `@Conditional`
+* **Externalized configuration**
+
+  * `@PropertySource`, `@ConfigurationProperties`
+* **Environment abstraction**
+
+  * `Environment`, `PropertySources`, `PropertyResolver`
+
+---
+
+## 🔹 2.1.4 Advanced Bean Concepts
+
+* **FactoryBeans**
+
+  * Difference between normal beans and `FactoryBean<T>`
+* **Lazy initialization**
+
+  * On-demand bean creation
+* **Parent & child contexts**
+
+  * Hierarchical `ApplicationContext` usage
+
+---
+
+## 🔹2.1.5 Core Containers: BeanFactory vs ApplicationContext
+
+* `BeanFactory` basics (lazy loading, lightweight container)
+* `ApplicationContext` (eager loading, advanced features)
+* Differences & when to use each
+
+---
+
+## 🔹2.1.6Events & Messaging
+
+* **Application events**
+
+  * Built-in events (`ContextRefreshedEvent`, `ContextClosedEvent`, etc.)
+  * Custom events & listeners (`ApplicationEventPublisher`)
+* **Event-driven architecture basics in Spring**
+
+---
+
+## 🔹2.1.7Resources & Utilities
+
+* **Resource abstraction**
+
+  * `Resource`, `ResourceLoader`, `ResourcePatternResolver`
+  * Loading from classpath, file system, URL
+* **Property resolution**
+
+  * `PropertySourcesPlaceholderConfigurer`
+
+---
+
+## 🔹2.1.8 Spring Expression Language (SpEL)
+
+* Syntax & operators
+* Accessing properties, collections, methods
+* Bean references inside SpEL
+* Use cases (`@Value`, conditional logic in configuration)
+
+---
+
+## 🔹2.1.9 Aspect-Oriented Programming (AOP)
+
+* **AOP concepts**
+
+  * Cross-cutting concerns
+  * Join points, pointcuts, advice, aspects
+* **Advice types**
+
+  * Before, After, AfterReturning, AfterThrowing, Around
+* **Pointcut expressions**
+
+  * `execution()`, `within()`, `@annotation`, etc.
+* **Proxies**
+
+  * JDK dynamic proxies vs CGLIB
+  * Limitations & proxy-target-class
+* **Custom aspects**
+
+  * Declaring aspects with `@Aspect` and `@EnableAspectJAutoProxy`
+* **Transaction management**
+
+  * Declarative transaction management with AOP
+  * `@Transactional` and propagation/isolation
+---
+
+## 🔹 2.1.10 Legacy & XML (for awareness)
+* **XML-based configuration**
+  * `<beans>`, `<bean>`, `<context:component-scan>`
+* **Annotation vs XML configuration**
+* Mixing and transitioning from XML to Java-based config
+
+---
 
 ### 2.2 Spring Boot Advanced Features
 - **Auto-Configuration & Customization**
@@ -145,15 +263,15 @@
     - Configuration server integration
     - Environment-specific configurations
     - Configuration validation and type safety
-    - Refreshable configuration with @RefreshScope
-
+    - Refreshable configuration with @RefreshScop
+    - Spring Boot with external services (mail, file upload, etc.)
 - **Testing in Spring Boot**
   - @SpringBootTest and test slices
   - @WebMvcTest for controller testing
   - @DataJpaTest for repository testing
   - TestContainers for integration testing
   - Mocking with @MockBean and @SpyBean
-
+  - Spring REST Client (RestTemplate, WebClient): Your application will need to call other REST APIs. WebClient is the modern, reactive way to do this.
 ### 2.3 Spring Web & REST APIs
 - **Spring MVC Advanced**
   - DispatcherServlet and request processing lifecycle
@@ -685,21 +803,22 @@
 ---
 
 ## 12. MODERN JAVA ECOSYSTEM
-
-### 12.1 Alternative JVM Languages Integration
-- **Kotlin Integration**
-  - Kotlin Spring Boot applications
-  - Kotlin coroutines for async programming
-  - Kotlin DSL for configuration
-  - Java-Kotlin interoperability
-  - Kotlin serialization libraries
-
-- **Scala Integration**
-  - Scala with Spring Framework
-  - Akka actors for concurrent systems
-  - Play Framework integration
-  - Functional programming patterns
-  - Scala collections and Java interop
+| **Feature / Functionality**         | **Description / What to Know**                      | **Example Libraries / Tools**                                                 | **Practice / Project Ideas**                    |
+| ----------------------------------- | --------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------- |
+| **File Handling**                   | Upload, download, serve files, streaming            | `java.io`, `java.nio.file`, Apache Commons FileUpload, Spring `MultipartFile` | File-sharing app, document management system    |
+| **Image Processing**                | Resize, compress, generate thumbnails               | Thumbnailator, ImageIO                                                        | Media gallery app with image upload/resize      |
+| **Audio / Video Processing**        | Streaming, format conversion, transcoding           | FFmpeg (Java wrapper), Xuggler                                                | Video/audio streaming platform, podcast manager |
+| **Database CRUD**                   | Relational & NoSQL operations, transactions         | Spring Data JPA, Hibernate, JDBC, MongoDB, Redis                              | Inventory system, blog platform                 |
+| **Caching**                         | Store frequently accessed data for performance      | Redis (Jedis, Lettuce), Ehcache                                               | API with caching for frequently requested data  |
+| **Authentication & Authorization**  | Login, registration, JWT, OAuth2, role-based access | Spring Security, jjwt, Auth0 Java JWT                                         | Secure REST API with roles and JWT              |
+| **Email & Notifications**           | Send emails, push notifications, SMS                | JavaMail, Spring Boot Mail, Twilio, FCM                                       | Email verification system, event notifications  |
+| **Scheduling & Background Jobs**    | Cron jobs, periodic tasks, async processing         | Spring `@Scheduled`, ExecutorService, Quartz Scheduler                        | Automated email sender, report generation       |
+| **Logging & Monitoring**            | Application logging, error handling, metrics        | SLF4J, Logback, Log4j2, Spring Boot Actuator, Prometheus                      | Admin dashboard for logs & metrics              |
+| **Third-Party API Integration**     | Consume external APIs (social, payment, maps)       | RestTemplate, WebClient, SDKs                                                 | Weather app, payment checkout system            |
+| **Payment & Transactions**          | Online payments, transaction handling               | Stripe Java SDK, PayPal SDK                                                   | E-commerce checkout system                      |
+| **Performance & Scalability**       | Caching, rate limiting, message queues              | Redis, RabbitMQ, Kafka, Guava Cache                                           | Scalable API, async background processing       |
+| **Reporting & Document Generation** | PDF, Excel, CSV generation                          | Apache POI, iText                                                             | Reporting system for invoices, analytics        |
+| **WebSockets / Real-time Features** | Real-time messaging or notifications                | Spring WebSocket, Socket.IO                                                   | Chat app, live notifications system             |
 
 ### 12.2 Native Compilation & Performance
 - **GraalVM Native Images**

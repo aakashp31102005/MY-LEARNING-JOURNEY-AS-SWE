@@ -1,0 +1,27 @@
+@use 'token';
+
+$min-width:25px;
+
+.item1{
+width: 100px;
+height: 100px;
+background-color: green;
+display: flex;
+align-items: center;
+justify-content: center;
+transition: border-radius 0.5s ease-in 0.2s;
+&__image{
+    width: 25px;
+    height: 25px;
+    background-color: pink;
+    &--smimage{
+        width: #{$min-width};
+        height: 10px;
+        background-color: token.$color-blue-500;
+    }
+}
+&:hover{
+    cursor:pointer;
+    border-radius: 20px;
+}
+}

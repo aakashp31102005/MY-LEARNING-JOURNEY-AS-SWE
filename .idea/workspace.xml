@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="e72ac380-401f-4492-9c34-9f096f3ab4de" name="Changes" comment="commit1">
+      <change afterPath="$PROJECT_DIR$/BACKEND/JAVA-BACKEND-PRIMARY/PRACTICING/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BACKEND/JAVA-BACKEND-PRIMARY/PRACTICING/CODING/ph-one-coding/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BACKEND/JAVA-BACKEND-PRIMARY/PRACTICING/CODING/ph-one-coding/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BACKEND/JAVA-BACKEND-PRIMARY/PRACTICING/CODING/ph-one-coding/src/com/equalhash.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BACKEND/JAVA-BACKEND-PRIMARY/PRACTICING/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/BACKEND/JAVA-BACKEND-PRIMARY/PRACTICING/.idea/.name" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BACKEND/JAVA-BACKEND-PRIMARY/PRACTICING/CODING/ph-one-coding/src/com/packagetwo/packagetwo.java" beforeDir="false" afterPath="$PROJECT_DIR$/BACKEND/JAVA-BACKEND-PRIMARY/PRACTICING/CODING/ph-one-coding/src/com/packagetwo/packagetwo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BACKEND/JAVA-BACKEND-PRIMARY/PRACTICING/CODING/ph-one-coding/src/inheitance.java" beforeDir="false" afterPath="$PROJECT_DIR$/BACKEND/JAVA-BACKEND-PRIMARY/PRACTICING/CODING/ph-one-coding/src/com/inheritance/inheitance.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BACKEND/JAVA-BACKEND-PRIMARY/PRACTICING/PHASES AND NOTES/JAVA-PLAN-PHASES/PHASE ONE/java_complete_core_topics.md" beforeDir="false" afterPath="$PROJECT_DIR$/BACKEND/JAVA-BACKEND-PRIMARY/PRACTICING/PHASES AND NOTES/JAVA-PLAN-PHASES/PHASE ONE/java_complete_core_topics.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BACKEND/JAVA-BACKEND-PRIMARY/PRACTICING/PHASES AND NOTES/JAVA-PLAN-PHASES/PHASE TWO/JPA,HIBERNAME ORM/hibernatepractice.md" beforeDir="false" afterPath="$PROJECT_DIR$/BACKEND/JAVA-BACKEND-PRIMARY/PRACTICING/PHASES AND NOTES/JAVA-PLAN-PHASES/PHASE TWO/JDBC JPA,HIBERNAME ORM/hibernatepractice.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BACKEND/JAVA-BACKEND-PRIMARY/PRACTICING/PHASES AND NOTES/JAVA-PLAN-PHASES/PHASE TWO/JPA,HIBERNAME ORM/jpa_hibernate_comprehensive.md" beforeDir="false" afterPath="$PROJECT_DIR$/BACKEND/JAVA-BACKEND-PRIMARY/PRACTICING/PHASES AND NOTES/JAVA-PLAN-PHASES/PHASE TWO/JDBC JPA,HIBERNAME ORM/jpa_hibernate_comprehensive.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BACKEND/JAVA-BACKEND-PRIMARY/PRACTICING/PHASES AND NOTES/JAVA-PLAN-PHASES/PHASE TWO/SPRING/senior_java_backend_plan.md" beforeDir="false" afterPath="$PROJECT_DIR$/BACKEND/JAVA-BACKEND-PRIMARY/PRACTICING/PHASES AND NOTES/JAVA-PLAN-PHASES/PHASE TWO/SPRING/senior_java_backend_plan.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BACKEND/JAVA-BACKEND-PRIMARY/PRACTICING/PHASES AND NOTES/NOTES-ON-EACH-PHASES/JDBC-NOTES/jdbc_complete_mindmap.md" beforeDir="false" afterPath="$PROJECT_DIR$/BACKEND/JAVA-BACKEND-PRIMARY/PRACTICING/PHASES AND NOTES/JAVA-PLAN-PHASES/PHASE TWO/JDBC JPA,HIBERNAME ORM/jdbc_complete_mindmap.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BACKEND/JAVA-BACKEND-PRIMARY/PRACTICING/PHASES AND NOTES/NOTES-ON-EACH-PHASES/JDBC-NOTES/jdbcnotes.md" beforeDir="false" afterPath="$PROJECT_DIR$/BACKEND/JAVA-BACKEND-PRIMARY/PRACTICING/PHASES AND NOTES/NOTES-ON-EACH-PHASES/JDBC-NOTES/jdbcnotes.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BACKEND/JAVA-BACKEND-PRIMARY/PRACTICING/PHASES AND NOTES/NOTES-ON-EACH-PHASES/PHASEONE NOTES/phaseonenotes.md" beforeDir="false" afterPath="$PROJECT_DIR$/BACKEND/JAVA-BACKEND-PRIMARY/PRACTICING/PHASES AND NOTES/NOTES-ON-EACH-PHASES/PHASEONE NOTES/phaseonenotes.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BACKEND/JAVA-BACKEND-PRIMARY/PRACTICING/PHASES AND NOTES/NOTES-ON-EACH-PHASES/jpa/jpa notes.md" beforeDir="false" afterPath="$PROJECT_DIR$/BACKEND/JAVA-BACKEND-PRIMARY/PRACTICING/PHASES AND NOTES/NOTES-ON-EACH-PHASES/jpa/jpa notes.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/dsa_interview/Phase two/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/DSA/dsa_interview/Phase two/.idea/.name" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/dsa_interview/Phase two/Recursion/recursionnotes.md" beforeDir="false" afterPath="$PROJECT_DIR$/DSA/dsa_interview/Phase two/Recursion/recursionnotes.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/dsa_interview/Phase two/Recursionproblems.java" beforeDir="false" afterPath="$PROJECT_DIR$/DSA/dsa_interview/Phase two/Recursionproblems.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/dsa_interview/Phase two/out/production/Phase two/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/DSA/dsa_interview/Phase two/out/production/Phase two/.idea/.name" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/dsa_interview/Phase two/out/production/Phase two/Recursionproblems.class" beforeDir="false" afterPath="$PROJECT_DIR$/DSA/dsa_interview/Phase two/out/production/Phase two/Recursionproblems.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/CORE-FRONTEND/PHASE ONE/html,css projects" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/CORE-FRONTEND/PHASE TWO/HTML/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/CORE-FRONTEND/PHASE TWO/HTML/.idea/HTML.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/CORE-FRONTEND/PHASE TWO/HTML/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/CORE-FRONTEND/PHASE TWO/HTML/html.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/CORE-FRONTEND/PHASE TWO/HTML/htmlnotes.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/CORE-FRONTEND/PHASE TWO/css/all interview properties.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/CORE-FRONTEND/PHASE TWO/javascript/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/CORE-FRONTEND/PHASE TWO/javascript/.idea/javascript.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/CORE-FRONTEND/PHASE TWO/javascript/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/CORE-FRONTEND/PHASE TWO/javascript/javascipt all syllabus.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/CORE-FRONTEND/PHASE TWO/javascript/javascript dom projects.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/CORE-FRONTEND/PHASE TWO/javascript/js_complete_guide.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/CORE-FRONTEND/PHASE TWO/javascript/jsnotes.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/CORE-FRONTEND/PHASE TWO/javascript/the only project for vennila js.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/CORE-FRONTEND/react/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/CORE-FRONTEND/react/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/CORE-FRONTEND/react/.idea/react.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/CORE-FRONTEND/react/project/netflix/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/CORE-FRONTEND/react/project/netflix/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/CORE-FRONTEND/react/project/netflix/eslint.config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/CORE-FRONTEND/react/project/netflix/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/CORE-FRONTEND/react/project/netflix/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/CORE-FRONTEND/react/project/netflix/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/CORE-FRONTEND/react/project/netflix/public/vite.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/CORE-FRONTEND/react/project/netflix/src/App.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/CORE-FRONTEND/react/project/netflix/src/assets/assets/back_arrow_icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/CORE-FRONTEND/react/project/netflix/src/assets/assets/background_banner.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/CORE-FRONTEND/react/project/netflix/src/assets/assets/bell_icon.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/CORE-FRONTEND/react/project/netflix/src/assets/assets/cards/Cards_data.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/CORE-FRONTEND/react/project/netflix/src/assets/assets/cards/card1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/CORE-FRONTEND/react/project/netflix/src/assets/assets/cards/card10.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/CORE-FRONTEND/react/project/netflix/src/assets/assets/cards/card11.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/CORE-FRONTEND/react/project/netflix/src/assets/assets/cards/card12.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/CORE-FRONTEND/react/project/netflix/src/assets/assets/cards/card13.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/CORE-FRONTEND/react/project/netflix/src/assets/assets/cards/card14.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/CORE-FRONTEND/react/project/netflix/src/assets/assets/cards/card2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/CORE-FRONTEND/react/project/netflix/src/assets/assets/cards/card3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/CORE-FRONTEND/react/project/netflix/src/assets/assets/cards/card4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/CORE-FRONTEND/react/project/netflix/src/assets/assets/cards/card5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/CORE-FRONTEND/react/project/netflix/src/assets/assets/cards/card6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/CORE-FRONTEND/react/project/netflix/src/assets/assets/cards/card7.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/CORE-FRONTEND/react/project/netflix/src/assets/assets/cards/card8.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/CORE-FRONTEND/react/project/netflix/src/assets/assets/cards/card9.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/CORE-FRONTEND/react/project/netflix/src/assets/assets/caret_icon.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/CORE-FRONTEND/react/project/netflix/src/assets/assets/facebook_icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/CORE-FRONTEND/react/project/netflix/src/assets/assets/hero_banner.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/CORE-FRONTEND/react/project/netflix/src/assets/assets/hero_title.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/CORE-FRONTEND/react/project/netflix/src/assets/assets/info_icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/CORE-FRONTEND/react/project/netflix/src/assets/assets/instagram_icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/CORE-FRONTEND/react/project/netflix/src/assets/assets/logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/CORE-FRONTEND/react/project/netflix/src/assets/assets/netflix_favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/CORE-FRONTEND/react/project/netflix/src/assets/assets/netflix_spinner.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/CORE-FRONTEND/react/project/netflix/src/assets/assets/play_icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/CORE-FRONTEND/react/project/netflix/src/assets/assets/profile_img.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/CORE-FRONTEND/react/project/netflix/src/assets/assets/search_icon.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/CORE-FRONTEND/react/project/netflix/src/assets/assets/twitter_icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/CORE-FRONTEND/react/project/netflix/src/assets/assets/youtube_icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/CORE-FRONTEND/react/project/netflix/src/assets/react.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/CORE-FRONTEND/react/project/netflix/src/components/Footer/Footer.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/CORE-FRONTEND/react/project/netflix/src/components/Footer/Footer.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/CORE-FRONTEND/react/project/netflix/src/components/Navbar/Navbar.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/CORE-FRONTEND/react/project/netflix/src/components/Navbar/Navbar.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/CORE-FRONTEND/react/project/netflix/src/components/Navbar/__test__/navbar.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/CORE-FRONTEND/react/project/netflix/src/components/Tittlecards/Tittlecard.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/CORE-FRONTEND/react/project/netflix/src/components/Tittlecards/Tittlecard.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/CORE-FRONTEND/react/project/netflix/src/main.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/CORE-FRONTEND/react/project/netflix/src/pages/Home/Home.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/CORE-FRONTEND/react/project/netflix/src/pages/Home/Home.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/CORE-FRONTEND/react/project/netflix/src/pages/Login/Login.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/CORE-FRONTEND/react/project/netflix/src/pages/Login/Login.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/CORE-FRONTEND/react/project/netflix/src/pages/Player/Player.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/CORE-FRONTEND/react/project/netflix/src/pages/Player/Player.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/CORE-FRONTEND/react/project/netflix/vite.config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/CORE-FRONTEND/react/project/reduxfullapp/finance-trackers/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/CORE-FRONTEND/react/project/reduxfullapp/finance-trackers/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/CORE-FRONTEND/react/project/reduxfullapp/finance-trackers/eslint.config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/CORE-FRONTEND/react/project/reduxfullapp/finance-trackers/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/CORE-FRONTEND/react/project/reduxfullapp/finance-trackers/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/CORE-FRONTEND/react/project/reduxfullapp/finance-trackers/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/CORE-FRONTEND/react/project/reduxfullapp/finance-trackers/public/vite.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/CORE-FRONTEND/react/project/reduxfullapp/finance-trackers/src/assets/react.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/CORE-FRONTEND/react/project/reduxfullapp/finance-trackers/src/finance-tracker/App.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/CORE-FRONTEND/react/project/reduxfullapp/finance-trackers/src/finance-tracker/components/CategoryForm.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/CORE-FRONTEND/react/project/reduxfullapp/finance-trackers/src/finance-tracker/components/CategoryList.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/CORE-FRONTEND/react/project/reduxfullapp/finance-trackers/src/finance-tracker/components/Dashboard.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/CORE-FRONTEND/react/project/reduxfullapp/finance-trackers/src/finance-tracker/components/FilterBar.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/CORE-FRONTEND/react/project/reduxfullapp/finance-trackers/src/finance-tracker/components/TransactionForm.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/CORE-FRONTEND/react/project/reduxfullapp/finance-trackers/src/finance-tracker/components/TransactionList.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/CORE-FRONTEND/react/project/reduxfullapp/finance-trackers/src/finance-tracker/features/categoriesSlice.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/CORE-FRONTEND/react/project/reduxfullapp/finance-trackers/src/finance-tracker/features/filtersSlice.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/CORE-FRONTEND/react/project/reduxfullapp/finance-trackers/src/finance-tracker/features/transactionsSlice.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/CORE-FRONTEND/react/project/reduxfullapp/finance-trackers/src/finance-tracker/store.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/CORE-FRONTEND/react/project/reduxfullapp/finance-trackers/src/finance-tracker/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/CORE-FRONTEND/react/project/reduxfullapp/finance-trackers/src/main.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/CORE-FRONTEND/react/project/reduxfullapp/finance-trackers/vite.config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/CORE-FRONTEND/react/project/reduxfullapp/main.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/CORE-FRONTEND/react/project/reduxfullapp/rdx/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/CORE-FRONTEND/react/project/reduxfullapp/rdx/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/CORE-FRONTEND/react/project/reduxfullapp/rdx/eslint.config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/CORE-FRONTEND/react/project/reduxfullapp/rdx/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/CORE-FRONTEND/react/project/reduxfullapp/rdx/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/CORE-FRONTEND/react/project/reduxfullapp/rdx/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/CORE-FRONTEND/react/project/reduxfullapp/rdx/public/vite.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/CORE-FRONTEND/react/project/reduxfullapp/rdx/src/App.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/CORE-FRONTEND/react/project/reduxfullapp/rdx/src/assets/react.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/CORE-FRONTEND/react/project/reduxfullapp/rdx/src/main.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/CORE-FRONTEND/react/project/reduxfullapp/rdx/vite.config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/CORE-FRONTEND/react/project/test.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/CORE-FRONTEND/react/project/todoist/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/CORE-FRONTEND/react/project/todoist/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/CORE-FRONTEND/react/project/todoist/eslint.config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/CORE-FRONTEND/react/project/todoist/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/CORE-FRONTEND/react/project/todoist/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/CORE-FRONTEND/react/project/todoist/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/CORE-FRONTEND/react/project/todoist/public/vite.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/CORE-FRONTEND/react/project/todoist/src/App.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/CORE-FRONTEND/react/project/todoist/src/assets/hpgr.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/CORE-FRONTEND/react/project/todoist/src/assets/icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/CORE-FRONTEND/react/project/todoist/src/assets/react.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/CORE-FRONTEND/react/project/todoist/src/components/Layout/Navbar/Navbar.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/CORE-FRONTEND/react/project/todoist/src/components/Layout/Navbar/Navbar.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/CORE-FRONTEND/react/project/todoist/src/main.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/CORE-FRONTEND/react/project/todoist/vite.config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/CORE-FRONTEND/react/project/youtube/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/CORE-FRONTEND/react/project/youtube/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/CORE-FRONTEND/react/project/youtube/eslint.config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/CORE-FRONTEND/react/project/youtube/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/CORE-FRONTEND/react/project/youtube/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/CORE-FRONTEND/react/project/youtube/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/CORE-FRONTEND/react/project/youtube/public/vite.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/CORE-FRONTEND/react/project/youtube/src/App.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/CORE-FRONTEND/react/project/youtube/src/Topbar/Searchbar.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/CORE-FRONTEND/react/project/youtube/src/Topbar/Topbar.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/CORE-FRONTEND/react/project/youtube/src/Topbar/Topbar.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/CORE-FRONTEND/react/project/youtube/src/Youtvideo/Yourvide.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/CORE-FRONTEND/react/project/youtube/src/Youtvideo/Yourvide2.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/CORE-FRONTEND/react/project/youtube/src/Youtvideo/Yourvide2.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/CORE-FRONTEND/react/project/youtube/src/Youtvideo/Yourvideo.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/CORE-FRONTEND/react/project/youtube/src/assets/microphone.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/CORE-FRONTEND/react/project/youtube/src/assets/notification.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/CORE-FRONTEND/react/project/youtube/src/assets/shortsicn.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/CORE-FRONTEND/react/project/youtube/src/assets/subscriptionicn.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/CORE-FRONTEND/react/project/youtube/src/main.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/CORE-FRONTEND/react/project/youtube/src/sidebar/Sdbronclick.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/CORE-FRONTEND/react/project/youtube/src/sidebar/Sidebar.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/CORE-FRONTEND/react/project/youtube/src/sidebar/Sidebardflt.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/CORE-FRONTEND/react/project/youtube/src/sidebar/SubscribedChannels.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/CORE-FRONTEND/react/project/youtube/src/sidebar/sidebar.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/CORE-FRONTEND/react/project/youtube/src/slice/addvideo.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/CORE-FRONTEND/react/project/youtube/src/store.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/CORE-FRONTEND/react/project/youtube/vite.config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/CORE-FRONTEND/react/reactNotes/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/CORE-FRONTEND/react/reactNotes/.idea/.name" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/CORE-FRONTEND/react/reactNotes/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/CORE-FRONTEND/react/reactNotes/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/CORE-FRONTEND/react/reactNotes/.idea/reactNotes.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/CORE-FRONTEND/react/reactNotes/REACT-NOTES/react-context-3.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/CORE-FRONTEND/react/reactNotes/REACT-NOTES/react-router-notes.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/CORE-FRONTEND/react/reactNotes/REACT-NOTES/reactnotes.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/CORE-FRONTEND/react/reactNotes/ROADMAP/redux.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/CORE-FRONTEND/react/reactNotes/ROADMAP/syllabus.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/CORE-FRONTEND/react/reactNotes/ROADMAP/syllabus.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/CORE-FRONTEND/react/workflow-to-make-projects.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/CORE-FRONTEND/responsive-css-guide.md" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;aakashp31102005&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/aakashp31102005/MY-LEARNING-JOURNEY-AS-SWE.git&quot;,
+    &quot;accountId&quot;: &quot;e618fbef-f055-433a-913a-07171b54f7b1&quot;
+  }
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 0
+}</component>
+  <component name="ProjectId" id="322b4RLSu5JpYbSpvFGWVlhbRmM" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_MARK_IGNORED_FILES_AS_EXCLUDED&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Spring/springmvc/springmvc&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
+  }
+}</component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="e72ac380-401f-4492-9c34-9f096f3ab4de" name="Changes" comment="" />
+      <created>1756621423860</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1756621423860</updated>
+    </task>
+    <task id="LOCAL-00001" summary="commit1">
+      <option name="closed" value="true" />
+      <created>1756621905045</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1756621905045</updated>
+    </task>
+    <task id="LOCAL-00002" summary="commit1">
+      <option name="closed" value="true" />
+      <created>1756623051805</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1756623051805</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="commit1" />
+    <option name="LAST_COMMIT_MESSAGE" value="commit1" />
+  </component>
+</project>

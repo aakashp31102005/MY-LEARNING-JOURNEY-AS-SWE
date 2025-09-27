@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>🔥 Coding Concept Learning TODO List</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f9f9f9;
+      color: #333;
+      padding: 20px;
+      max-width: 800px;
+      margin: auto;
+    }
+    h1 {
+      text-align: center;
+      color: #d35400;
+    }
+    h2 {
+      margin-top: 30px;
+      color: #2c3e50;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+    li {
+      background: #fff;
+      margin: 5px 0;
+      padding: 10px;
+      border-radius: 6px;
+      border: 1px solid #ddd;
+      display: flex;
+      align-items: center;
+    }
+    input[type="checkbox"] {
+      margin-right: 10px;
+      transform: scale(1.3);
+    }
+    .completed {
+      text-decoration: line-through;
+      color: #777;
+    }
+    .reset-btn {
+      margin-top: 20px;
+      padding: 8px 16px;
+      background: #e74c3c;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    .reset-btn:hover {
+      background: #c0392b;
+    }
+  </style>
+</head>
+<body>
+  <h1>🔥 Coding Concept Learning TODO List</h1>
+
+  <h2>Step 1 – Learn</h2>
+  <ul>
+    <li><input type="checkbox"> Watch 1 tutorial (video/blog) to understand the big picture.</li>
+    <li><input type="checkbox"> Skim documentation for exact syntax and edge cases.</li>
+    <li><input type="checkbox"> Ask AI for clarification + summary of tricky parts.</li>
+    <li><input type="checkbox"> Write a 1-page summary/cheat sheet in your own words.</li>
+  </ul>
+
+  <h2>Step 2 – Practice with Tasks</h2>
+  <ul>
+    <li><input type="checkbox"> Ask AI: “Give me 10 tasks on [concept].”</li>
+    <li><input type="checkbox"> Solve tasks without looking at notes.</li>
+    <li><input type="checkbox"> If stuck: break problem → pseudo-code → code.</li>
+    <li><input type="checkbox"> Review alternative solutions after solving.</li>
+    <li><input type="checkbox"> Record mistakes in Error Log.</li>
+  </ul>
+
+  <h2>Step 3 – Independent Coding</h2>
+  <ul>
+    <li><input type="checkbox"> Do 3–5 tasks on your own (no hints).</li>
+    <li><input type="checkbox"> Compare performance/clarity with solutions.</li>
+    <li><input type="checkbox"> Write down lessons learned in journal.</li>
+  </ul>
+
+  <h2>Step 4 – Weekend Project + Spaced Repetition</h2>
+  <ul>
+    <li><input type="checkbox"> Build 1 mini-project (2–5 hrs).</li>
+    <li><input type="checkbox"> Apply concept in a real-world scenario.</li>
+    <li><input type="checkbox"> Revisit cheat sheet & error log.</li>
+    <li><input type="checkbox"> Re-implement concept in a new context.</li>
+  </ul>
+
+  <h2>Step 5 – Weekly Review</h2>
+  <ul>
+    <li><input type="checkbox"> Review all notes + flashcards.</li>
+    <li><input type="checkbox"> Re-attempt 2–3 old problems (from memory).</li>
+    <li><input type="checkbox"> Update GitHub/portfolio with project.</li>
+  </ul>
+
+  <button class="reset-btn" onclick="resetAll()">Reset All</button>
+
+  <script>
+    // Save progress in local storage
+    const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+    checkboxes.forEach((box, i) => {
+      // Load saved state
+      if (localStorage.getItem('todo' + i) === 'true') {
+        box.checked = true;
+        box.parentElement.classList.add('completed');
+      }
+      // Save on change
+      box.addEventListener('change', () => {
+        localStorage.setItem('todo' + i, box.checked);
+        box.parentElement.classList.toggle('completed', box.checked);
+      });
+    });
+
+    // Reset button
+    function resetAll() {
+      checkboxes.forEach((box, i) => {
+        box.checked = false;
+        localStorage.removeItem('todo' + i);
+        box.parentElement.classList.remove('completed');
+      });
+    }
+  </script>
+</body>
+</html>

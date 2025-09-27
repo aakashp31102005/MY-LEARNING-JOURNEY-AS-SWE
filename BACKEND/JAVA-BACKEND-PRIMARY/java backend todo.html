@@ -1,0 +1,1727 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complete Java Backend Developer Roadmap 2024-2027</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/10.6.1/mermaid.min.js"></script>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        .main-container {
+            max-width: 1600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            margin-bottom: 30px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header h1 {
+            font-size: 3rem;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 15px;
+            font-weight: 800;
+        }
+        
+        .header p {
+            font-size: 1.3rem;
+            color: #666;
+            margin-bottom: 20px;
+        }
+        
+        .progress-tracker {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .progress-bar {
+            width: 100%;
+            height: 20px;
+            background: #e0e0e0;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 10px;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            width: 0%;
+            transition: width 0.3s ease;
+        }
+        
+        .roadmap-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+            gap: 25px;
+            margin-bottom: 30px;
+        }
+        
+        .phase-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .phase-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+        }
+        
+        .phase-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+        }
+        
+        .phase-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 25px;
+        }
+        
+        .phase-number {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin-right: 20px;
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+        
+        .phase-title {
+            font-size: 1.8rem;
+            color: #2c3e50;
+            font-weight: 700;
+        }
+        
+        .difficulty {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            margin-left: auto;
+        }
+        
+        .beginner { background: #e8f5e8; color: #27ae60; }
+        .intermediate { background: #fff3cd; color: #f39c12; }
+        .advanced { background: #f8d7da; color: #e74c3c; }
+        .expert { background: #d1ecf1; color: #17a2b8; }
+        
+        .topics-grid {
+            display: grid;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .topic-section {
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 20px;
+            border-left: 4px solid #667eea;
+        }
+        
+        .topic-title {
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+        
+        .subtopics {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 10px;
+        }
+        
+        .subtopic {
+            display: flex;
+            align-items: center;
+            padding: 8px 12px;
+            background: white;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            transition: all 0.2s ease;
+            cursor: pointer;
+            border: 1px solid #e9ecef;
+        }
+        
+        .subtopic:hover {
+            background: #667eea;
+            color: white;
+            transform: translateX(5px);
+        }
+        
+        .subtopic::before {
+            content: '▶';
+            margin-right: 8px;
+            font-size: 0.7rem;
+            opacity: 0.7;
+        }
+        
+        .completed {
+            background: #d4edda !important;
+            color: #155724 !important;
+            border-color: #c3e6cb !important;
+        }
+        
+        .completed::before {
+            content: '✓';
+            color: #28a745;
+        }
+        
+        .tips-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .tip-card {
+            padding: 15px;
+            border-radius: 10px;
+            font-size: 0.9rem;
+        }
+        
+        .interview-tip {
+            background: linear-gradient(135deg, #fee2e2, #fecaca);
+            border-left: 4px solid #ef4444;
+        }
+        
+        .project-tip {
+            background: linear-gradient(135deg, #dcfce7, #bbf7d0);
+            border-left: 4px solid #22c55e;
+        }
+        
+        .tip-title {
+            font-weight: bold;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .tip-icon {
+            margin-right: 8px;
+            font-size: 1.1rem;
+        }
+        
+        .timeline {
+            display: flex;
+            align-items: center;
+            margin-top: 15px;
+            font-size: 0.9rem;
+            color: #666;
+        }
+        
+        .timeline-icon {
+            margin-right: 8px;
+        }
+        
+        .resources {
+            margin-top: 20px;
+            padding: 15px;
+            background: #f1f3f4;
+            border-radius: 10px;
+        }
+        
+        .resource-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        
+        .resource-link {
+            padding: 6px 12px;
+            background: #667eea;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            transition: background 0.2s ease;
+        }
+        
+        .resource-link:hover {
+            background: #5a6fd8;
+        }
+        
+        .stats-dashboard {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+        
+        .stat-card {
+            text-align: center;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border-radius: 15px;
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            display: block;
+        }
+        
+        .stat-label {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+        
+        @media (max-width: 768px) {
+            .roadmap-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .subtopics {
+                grid-template-columns: 1fr;
+            }
+            
+            .tips-section {
+                grid-template-columns: 1fr;
+            }
+            
+            .header h1 {
+                font-size: 2rem;
+            }
+        }
+        
+        .learning-path {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        }
+        
+        .path-title {
+            font-size: 1.8rem;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .mermaid-container {
+            background: white;
+            border-radius: 15px;
+            padding: 20px;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="main-container">
+        <div class="header">
+            <h1>Complete Java Backend Developer Roadmap</h1>
+            <p>From Zero to Senior Java Backend Engineer (2024-2027)</p>
+            <p style="font-size: 1rem; color: #888;">🚀 100% Trusted • No Missing Topics • Production Ready</p>
+        </div>
+
+        <div class="stats-dashboard">
+            <h3 style="text-align: center; margin-bottom: 20px; color: #2c3e50;">Roadmap Statistics</h3>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <span class="stat-number">12</span>
+                    <span class="stat-label">Learning Phases</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">180+</span>
+                    <span class="stat-label">Core Topics</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">24-36</span>
+                    <span class="stat-label">Months Duration</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">100%</span>
+                    <span class="stat-label">Industry Ready</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="progress-tracker">
+            <h3 style="margin-bottom: 15px; color: #2c3e50;">Your Progress</h3>
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+            <p id="progressText">0% Complete - Click on topics to mark as completed</p>
+        </div>
+
+        <div class="learning-path">
+            <h2 class="path-title">Complete Learning Journey</h2>
+            <div class="mermaid-container">
+                <div class="mermaid">
+flowchart TD
+    Start([🚀 Start Journey]) --> Prerequisites
+    
+    Prerequisites[Phase 1: Prerequisites & Environment] --> JavaCore
+    JavaCore[Phase 2: Core Java Mastery] --> WebTech
+    WebTech[Phase 3: Web Technologies] --> Spring
+    Spring[Phase 4: Spring Framework] --> SpringBoot
+    SpringBoot[Phase 5: Spring Boot Mastery] --> Database
+    Database[Phase 6: Database Technologies] --> API
+    API[Phase 7: API Development] --> Security
+    Security[Phase 8: Security Implementation] --> Microservices
+    Microservices[Phase 9: Microservices Architecture] --> DevOps
+    DevOps[Phase 10: DevOps & Cloud] --> Testing
+    Testing[Phase 11: Testing Strategies] --> Advanced
+    Advanced[Phase 12: Advanced Topics] --> Senior([🎯 Senior Java Backend Engineer])
+    
+    style Start fill:#e1f5fe
+    style Senior fill:#c8e6c9
+    style Prerequisites fill:#fff3e0
+    style JavaCore fill:#f3e5f5
+    style WebTech fill:#e8f5e8
+    style Spring fill:#e3f2fd
+    style SpringBoot fill:#f1f8e9
+    style Database fill:#fce4ec
+    style API fill:#e8eaf6
+    style Security fill:#fff8e1
+    style Microservices fill:#e0f2f1
+    style DevOps fill:#fafafa
+    style Testing fill:#f9fbe7
+    style Advanced fill:#f3e5f5
+                </div>
+            </div>
+        </div>
+
+        <div class="roadmap-container">
+            <!-- Phase 1: Prerequisites -->
+            <div class="phase-card">
+                <div class="phase-header">
+                    <div class="phase-number">1</div>
+                    <div>
+                        <h2 class="phase-title">Prerequisites & Environment</h2>
+                        <span class="difficulty beginner">Beginner</span>
+                    </div>
+                </div>
+                
+                <div class="topics-grid">
+                    <div class="topic-section">
+                        <h3 class="topic-title">Development Environment</h3>
+                        <div class="subtopics">
+                            <div class="subtopic">JDK Installation & Configuration</div>
+                            <div class="subtopic">IDE Setup (IntelliJ IDEA/Eclipse)</div>
+                            <div class="subtopic">Maven/Gradle Build Tools</div>
+                            <div class="subtopic">Git Version Control</div>
+                            <div class="subtopic">Command Line Basics</div>
+                        </div>
+                    </div>
+                    
+                    <div class="topic-section">
+                        <h3 class="topic-title">Programming Fundamentals</h3>
+                        <div class="subtopics">
+                            <div class="subtopic">Programming Logic & Algorithms</div>
+                            <div class="subtopic">Data Structures Basics</div>
+                            <div class="subtopic">Problem Solving Approach</div>
+                            <div class="subtopic">Code Organization</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline">
+                    <span class="timeline-icon">⏱️</span>
+                    Duration: 2-4 weeks
+                </div>
+                
+                <div class="tips-section">
+                    <div class="tip-card interview-tip">
+                        <div class="tip-title">
+                            <span class="tip-icon">💡</span>
+                            Interview Focus
+                        </div>
+                        <p>Be familiar with different JDK versions, build tools, and version control concepts.</p>
+                    </div>
+                    <div class="tip-card project-tip">
+                        <div class="tip-title">
+                            <span class="tip-icon">🚀</span>
+                            Practice Project
+                        </div>
+                        <p>Set up a complete development environment and create a "Hello World" Maven project.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Phase 2: Core Java Mastery -->
+            <div class="phase-card">
+                <div class="phase-header">
+                    <div class="phase-number">2</div>
+                    <div>
+                        <h2 class="phase-title">Core Java Mastery</h2>
+                        <span class="difficulty beginner">Beginner-Intermediate</span>
+                    </div>
+                </div>
+                
+                <div class="topics-grid">
+                    <div class="topic-section">
+                        <h3 class="topic-title">Java Fundamentals</h3>
+                        <div class="subtopics">
+                            <div class="subtopic">Variables, Data Types, Operators</div>
+                            <div class="subtopic">Control Flow (if, switch, loops)</div>
+                            <div class="subtopic">Methods & Parameter Passing</div>
+                            <div class="subtopic">Arrays & Strings</div>
+                            <div class="subtopic">Package & Access Modifiers</div>
+                        </div>
+                    </div>
+                    
+                    <div class="topic-section">
+                        <h3 class="topic-title">Object-Oriented Programming</h3>
+                        <div class="subtopics">
+                            <div class="subtopic">Classes & Objects</div>
+                            <div class="subtopic">Inheritance & Polymorphism</div>
+                            <div class="subtopic">Abstraction & Encapsulation</div>
+                            <div class="subtopic">Interfaces & Abstract Classes</div>
+                            <div class="subtopic">Method Overloading & Overriding</div>
+                            <div class="subtopic">Static & Instance Members</div>
+                        </div>
+                    </div>
+                    
+                    <div class="topic-section">
+                        <h3 class="topic-title">Advanced Java Concepts</h3>
+                        <div class="subtopics">
+                            <div class="subtopic">Exception Handling</div>
+                            <div class="subtopic">Collections Framework</div>
+                            <div class="subtopic">Generics</div>
+                            <div class="subtopic">Enum & Annotations</div>
+                            <div class="subtopic">Inner Classes</div>
+                            <div class="subtopic">File I/O & Serialization</div>
+                        </div>
+                    </div>
+                    
+                    <div class="topic-section">
+                        <h3 class="topic-title">Java 8+ Features</h3>
+                        <div class="subtopics">
+                            <div class="subtopic">Lambda Expressions</div>
+                            <div class="subtopic">Stream API</div>
+                            <div class="subtopic">Optional Class</div>
+                            <div class="subtopic">Method References</div>
+                            <div class="subtopic">Functional Interfaces</div>
+                            <div class="subtopic">Date & Time API</div>
+                        </div>
+                    </div>
+                    
+                    <div class="topic-section">
+                        <h3 class="topic-title">Multithreading & Concurrency</h3>
+                        <div class="subtopics">
+                            <div class="subtopic">Thread Creation & Management</div>
+                            <div class="subtopic">Synchronization & Locks</div>
+                            <div class="subtopic">Thread Pool & Executor Service</div>
+                            <div class="subtopic">Concurrent Collections</div>
+                            <div class="subtopic">CompletableFuture</div>
+                            <div class="subtopic">Atomic Classes</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline">
+                    <span class="timeline-icon">⏱️</span>
+                    Duration: 8-12 weeks
+                </div>
+                
+                <div class="tips-section">
+                    <div class="tip-card interview-tip">
+                        <div class="tip-title">
+                            <span class="tip-icon">💡</span>
+                            Interview Focus
+                        </div>
+                        <p>Master OOP concepts with examples, understand Collections performance, explain multithreading concepts clearly.</p>
+                    </div>
+                    <div class="tip-card project-tip">
+                        <div class="tip-title">
+                            <span class="tip-icon">🚀</span>
+                            Practice Projects
+                        </div>
+                        <p>Build a Library Management System, Multi-threaded File Processor, and Stream API data analyzer.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Phase 3: Web Technologies -->
+            <div class="phase-card">
+                <div class="phase-header">
+                    <div class="phase-number">3</div>
+                    <div>
+                        <h2 class="phase-title">Web Technologies</h2>
+                        <span class="difficulty intermediate">Intermediate</span>
+                    </div>
+                </div>
+                
+                <div class="topics-grid">
+                    <div class="topic-section">
+                        <h3 class="topic-title">Servlet Technology</h3>
+                        <div class="subtopics">
+                            <div class="subtopic">Servlet Lifecycle</div>
+                            <div class="subtopic">HttpServletRequest & Response</div>
+                            <div class="subtopic">Session Management</div>
+                            <div class="subtopic">Cookies & URL Rewriting</div>
+                            <div class="subtopic">Filter & Listener</div>
+                            <div class="subtopic">Servlet Configuration</div>
+                        </div>
+                    </div>
+                    
+                    <div class="topic-section">
+                        <h3 class="topic-title">JSP (JavaServer Pages)</h3>
+                        <div class="subtopics">
+                            <div class="subtopic">JSP Lifecycle</div>
+                            <div class="subtopic">Scriptlets, Expressions, Declarations</div>
+                            <div class="subtopic">JSP Directives</div>
+                            <div class="subtopic">JSTL (JSP Standard Tag Library)</div>
+                            <div class="subtopic">Custom Tags</div>
+                            <div class="subtopic">EL (Expression Language)</div>
+                        </div>
+                    </div>
+                    
+                    <div class="topic-section">
+                        <h3 class="topic-title">Web Servers & Containers</h3>
+                        <div class="subtopics">
+                            <div class="subtopic">Apache Tomcat</div>
+                            <div class="subtopic">Jetty Server</div>
+                            <div class="subtopic">Web.xml Configuration</div>
+                            <div class="subtopic">Application Deployment</div>
+                            <div class="subtopic">Server Performance Tuning</div>
+                        </div>
+                    </div>
+                    
+                    <div class="topic-section">
+                        <h3 class="topic-title">HTTP & Web Fundamentals</h3>
+                        <div class="subtopics">
+                            <div class="subtopic">HTTP Methods & Status Codes</div>
+                            <div class="subtopic">Request/Response Headers</div>
+                            <div class="subtopic">Content Types & Encoding</div>
+                            <div class="subtopic">Cross-Origin Resource Sharing</div>
+                            <div class="subtopic">Web Security Basics</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline">
+                    <span class="timeline-icon">⏱️</span>
+                    Duration: 4-6 weeks
+                </div>
+                
+                <div class="tips-section">
+                    <div class="tip-card interview-tip">
+                        <div class="tip-title">
+                            <span class="tip-icon">💡</span>
+                            Interview Focus
+                        </div>
+                        <p>Understand servlet lifecycle, session management, and difference between GET/POST requests.</p>
+                    </div>
+                    <div class="tip-card project-tip">
+                        <div class="tip-title">
+                            <span class="tip-icon">🚀</span>
+                            Practice Project
+                        </div>
+                        <p>Build a web application using servlets and JSP with user authentication and session management.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Phase 4: Spring Framework -->
+            <div class="phase-card">
+                <div class="phase-header">
+                    <div class="phase-number">4</div>
+                    <div>
+                        <h2 class="phase-title">Spring Framework</h2>
+                        <span class="difficulty intermediate">Intermediate</span>
+                    </div>
+                </div>
+                
+                <div class="topics-grid">
+                    <div class="topic-section">
+                        <h3 class="topic-title">Spring Core</h3>
+                        <div class="subtopics">
+                            <div class="subtopic">Inversion of Control (IoC)</div>
+                            <div class="subtopic">Dependency Injection</div>
+                            <div class="subtopic">Bean Configuration (XML, Annotation, Java)</div>
+                            <div class="subtopic">Bean Scopes & Lifecycle</div>
+                            <div class="subtopic">ApplicationContext</div>
+                            <div class="subtopic">Spring Expression Language (SpEL)</div>
+                        </div>
+                    </div>
+                    
+                    <div class="topic-section">
+                        <h3 class="topic-title">Spring AOP</h3>
+                        <div class="subtopics">
+                            <div class="subtopic">Aspect-Oriented Programming Concepts</div>
+                            <div class="subtopic">Pointcuts & Advice</div>
+                            <div class="subtopic">@Aspect Annotation</div>
+                            <div class="subtopic">Around, Before, After Advice</div>
+                            <div class="subtopic">Proxy Patterns</div>
+                        </div>
+                    </div>
+                    
+                    <div class="topic-section">
+                        <h3 class="topic-title">Spring MVC</h3>
+                        <div class="subtopics">
+                            <div class="subtopic">DispatcherServlet</div>
+                            <div class="subtopic">Controller & RequestMapping</div>
+                            <div class="subtopic">Model & View</div>
+                            <div class="subtopic">ViewResolver</div>
+                            <div class="subtopic">Form Handling & Validation</div>
+                            <div class="subtopic">Interceptors</div>
+                        </div>
+                    </div>
+                    
+                    <div class="topic-section">
+                        <h3 class="topic-title">Spring Data Access</h3>
+                        <div class="subtopics">
+                            <div class="subtopic">Spring JDBC</div>
+                            <div class="subtopic">JdbcTemplate</div>
+                            <div class="subtopic">Transaction Management</div>
+                            <div class="subtopic">@Transactional Annotation</div>
+                            <div class="subtopic">DataSource Configuration</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline">
+                    <span class="timeline-icon">⏱️</span>
+                    Duration: 6-8 weeks
+                </div>
+                
+                <div class="tips-section">
+                    <div class="tip-card interview-tip">
+                        <div class="tip-title">
+                            <span class="tip-icon">💡</span>
+                            Interview Focus
+                        </div>
+                        <p>Explain IoC container, bean lifecycle, and Spring MVC request flow. Understand AOP concepts clearly.</p>
+                    </div>
+                    <div class="tip-card project-tip">
+                        <div class="tip-title">
+                            <span class="tip-icon">🚀</span>
+                            Practice Project
+                        </div>
+                        <p>Convert servlet-based application to Spring MVC with proper dependency injection and AOP logging.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Phase 5: Spring Boot Mastery -->
+            <div class="phase-card">
+                <div class="phase-header">
+                    <div class="phase-number">5</div>
+                    <div>
+                        <h2 class="phase-title">Spring Boot Mastery</h2>
+                        <span class="difficulty intermediate">Intermediate</span>
+                    </div>
+                </div>
+                
+                <div class="topics-grid">
+                    <div class="topic-section">
+                        <h3 class="topic-title">Spring Boot Fundamentals</h3>
+                        <div class="subtopics">
+                            <div class="subtopic">Auto-Configuration</div>
+                            <div class="subtopic">Starter Dependencies</div>
+                            <div class="subtopic">Application Properties</div>
+                            <div class="subtopic">Spring Boot CLI</div>
+                            <div class="subtopic">Embedded Servers</div>
+                            <div class="subtopic">DevTools</div>
+                        </div>
+                    </div>
+                    
+                    <div class="topic-section">
+                        <h3 class="topic-title">Configuration Management</h3>
+                        <div class="subtopics">
+                            <div class="subtopic">Profiles (@Profile)</div>
+                            <div class="subtopic">Configuration Properties</div>
+                            <div class="subtopic">Environment-specific Config</div>
+                            <div class="subtopic">@ConfigurationProperties</div>
+                            <div class="subtopic">External Configuration</div>
+                            <div class="subtopic">YAML Configuration</div>
+                        </div>
+                    </div>
+                    
+                    <div class="topic-section">
+                        <h3 class="topic-title">Spring Boot Actuator</h3>
+                        <div class="subtopics">
+                            <div class="subtopic">Health Checks</div>
+                            <div class="subtopic">Metrics & Monitoring</div>
+                            <div class="subtopic">Custom Endpoints</div>
+                            <div class="subtopic">Application Info</div>
+                            <div class="subtopic">Production Monitoring</div>
+                        </div>
+                    </div>
+                    
+                    <div class="topic-section">
+                        <h3 class="topic-title">Advanced Features</h3>
+                        <div class="subtopics">
+                            <div class="subtopic">Custom Auto-Configuration</div>
+                            <div class="subtopic">Conditional Beans</div>
+                            <div class="subtopic">Spring Boot Test</div>
+                            <div class="subtopic">Banner Customization</div>
+                            <div class="subtopic">Logging Configuration</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline">
+                    <span class="timeline-icon">⏱️</span>
+                    Duration: 4-5 weeks
+                </div>
+                
+                <div class="tips-section">
+                    <div class="tip-card interview-tip">
+                        <div class="tip-title">
+                            <span class="tip-icon">💡</span>
+                            Interview Focus
+                        </div>
+                        <p>Explain auto-configuration magic, profile management, and actuator endpoints usage.</p>
+                    </div>
+                    <div class="tip-card project-tip">
+                        <div class="tip-title">
+                            <span class="tip-icon">🚀</span>
+                            Practice Project
+                        </div>
+                        <p>Create a Spring Boot application with multiple profiles, actuator monitoring, and custom configuration.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Phase 6: Database Technologies -->
+            <div class="phase-card">
+                <div class="phase-header">
+                    <div class="phase-number">6</div>
+                    <div>
+                        <h2 class="phase-title">Database Technologies</h2>
+                        <span class="difficulty intermediate">Intermediate</span>
+                    </div>
+                </div>
+                
+                <div class="topics-grid">
+                    <div class="topic-section">
+                        <h3 class="topic-title">SQL Databases</h3>
+                        <div class="subtopics">
+                            <div class="subtopic">MySQL/PostgreSQL</div>
+                            <div class="subtopic">SQL Queries & Joins</div>
+                            <div class="subtopic">Indexes & Performance</div>
+                            <div class="subtopic">Stored Procedures</div>
+                            <div class="subtopic">Triggers & Functions</div>
+                            <div class="subtopic">Database Design</div>
+                        </div>
+                    </div>
+                    
+                    <div class="topic-section">
+                        <h3 class="topic-title">ORM & JPA</h3>
+                        <div class="subtopics">
+                            <div class="subtopic">JPA Fundamentals</div>
+                            <div class="subtopic">Hibernate Implementation</div>
+                            <div class="subtopic">Entity Relationships</div>
+                            <div class="subtopic">JPQL & Criteria API</div>
+                            <div class="subtopic">Caching (L1, L2)</div>
+                            <div class="subtopic">Lazy vs Eager Loading</div>
+                        </div>
+                    </div>
+                    
+                    <div class="topic-section">
+                        <h3 class="topic-title">Spring Data JPA</h3>
+                        <div class="subtopics">
+                            <div class="subtopic">Repository Pattern</div>
+                            <div class="subtopic">Query Methods</div>
+                            <div class="subtopic">Custom Queries (@Query)</div>
+                            <div class="subtopic">Specifications</div>
+                            <div class="subtopic">Pagination & Sorting</div>
+                            <div class="subtopic">Auditing</div>
+                        </div>
+                    </div>
+                    
+                    <div class="topic-section">
+                        <h3 class="topic-title">NoSQL Databases</h3>
+                        <div class="subtopics">
+                            <div class="subtopic">MongoDB</div>
+                            <div class="subtopic">Redis (Caching)</div>
+                            <div class="subtopic">Cassandra Basics</div>
+                            <div class="subtopic">Spring Data MongoDB</div>
+                            <div class="subtopic">Spring Data Redis</div>
+                        </div>
+                    </div>
+                    
+                    <div class="topic-section">
+                        <h3 class="topic-title">Database Migration</h3>
+                        <div class="subtopics">
+                            <div class="subtopic">Flyway</div>
+                            <div class="subtopic">Liquibase</div>
+                            <div class="subtopic">Version Control for DB</div>
+                            <div class="subtopic">Schema Evolution</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline">
+                    <span class="timeline-icon">⏱️</span>
+                    Duration: 6-8 weeks
+                </div>
+                
+                <div class="tips-section">
+                    <div class="tip-card interview-tip">
+                        <div class="tip-title">
+                            <span class="tip-icon">💡</span>
+                            Interview Focus
+                        </div>
+                        <p>Write complex SQL queries, explain JPA lifecycle, understand caching mechanisms, and database performance tuning.</p>
+                    </div>
+                    <div class="tip-card project-tip">
+                        <div class="tip-title">
+                            <span class="tip-icon">🚀</span>
+                            Practice Project
+                        </div>
+                        <p>Build an e-commerce backend with MySQL for transactions and Redis for caching, using Spring Data JPA.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Phase 7: API Development -->
+            <div class="phase-card">
+                <div class="phase-header">
+                    <div class="phase-number">7</div>
+                    <div>
+                        <h2 class="phase-title">API Development</h2>
+                        <span class="difficulty intermediate">Intermediate</span>
+                    </div>
+                </div>
+                
+                <div class="topics-grid">
+                    <div class="topic-section">
+                        <h3 class="topic-title">REST API Design</h3>
+                        <div class="subtopics">
+                            <div class="subtopic">REST Principles & Constraints</div>
+                            <div class="subtopic">HTTP Methods (GET, POST, PUT, DELETE)</div>
+                            <div class="subtopic">Status Codes & Headers</div>
+                            <div class="subtopic">Resource Naming Conventions</div>
+                            <div class="subtopic">Content Negotiation</div>
+                            <div class="subtopic">HATEOAS</div>
+                        </div>
+                    </div>
+                    
+                    <div class="topic-section">
+                        <h3 class="topic-title">Spring REST</h3>
+                        <div class="subtopics">
+                            <div class="subtopic">@RestController</div>
+                            <div class="subtopic">Request/Response Mapping</div>
+                            <div class="subtopic">@PathVariable & @RequestParam</div>
+                            <div class="subtopic">@RequestBody & @ResponseBody</div>
+                            <div class="subtopic">ResponseEntity</div>
+                            <div class="subtopic">Content Negotiation</div>
+                        </div>
+                    </div>
+                    
+                    <div class="topic-section">
+                        <h3 class="topic-title">GraphQL</h3>
+                        <div class="subtopics">
+                            <div class="subtopic">GraphQL Fundamentals</div>
+                            <div class="subtopic">Schema Definition</div>
+                            <div class="subtopic">Queries & Mutations</div>
+                            <div class="subtopic">Resolvers</div>
+                            <div class="subtopic">Spring Boot GraphQL</div>
+                            <div class="subtopic">DataLoader Pattern</div>
+                        </div>
+                    </div>
+                    
+                    <div class="topic-section">
+                        <h3 class="topic-title">API Documentation</h3>
+                        <div class="subtopics">
+                            <div class="subtopic">Swagger/OpenAPI 3</div>
+                            <div class="subtopic">API Documentation Best Practices</div>
+                            <div class="subtopic">Postman Collections</div>
+                            <div class="subtopic">API Versioning</div>
+                        </div>
+                    </div>
+                    
+                    <div class="topic-section">
+                        <h3 class="topic-title">Error Handling & Validation</h3>
+                        <div class="subtopics">
+                            <div class="subtopic">Global Exception Handling</div>
+                            <div class="subtopic">@ControllerAdvice</div>
+                            <div class="subtopic">Bean Validation (@Valid)</div>
+                            <div class="subtopic">Custom Validators</div>
+                            <div class="subtopic">Error Response Standards</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline">
+                    <span class="timeline-icon">⏱️</span>
+                    Duration: 4-5 weeks
+                </div>
+                
+                <div class="tips-section">
+                    <div class="tip-card interview-tip">
+                        <div class="tip-title">
+                            <span class="tip-icon">💡</span>
+                            Interview Focus
+                        </div>
+                        <p>Design RESTful endpoints, explain HTTP status codes, understand GraphQL vs REST trade-offs.</p>
+                    </div>
+                    <div class="tip-card project-tip">
+                        <div class="tip-title">
+                            <span class="tip-icon">🚀</span>
+                            Practice Project
+                        </div>
+                        <p>Create both REST and GraphQL APIs for the same domain with complete documentation and error handling.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Phase 8: Security Implementation -->
+            <div class="phase-card">
+                <div class="phase-header">
+                    <div class="phase-number">8</div>
+                    <div>
+                        <h2 class="phase-title">Security Implementation</h2>
+                        <span class="difficulty advanced">Advanced</span>
+                    </div>
+                </div>
+                
+                <div class="topics-grid">
+                    <div class="topic-section">
+                        <h3 class="topic-title">Spring Security Fundamentals</h3>
+                        <div class="subtopics">
+                            <div class="subtopic">Authentication vs Authorization</div>
+                            <div class="subtopic">SecurityFilterChain</div>
+                            <div class="subtopic">UserDetailsService</div>
+                            <div class="subtopic">Password Encoding</div>
+                            <div class="subtopic">Security Configuration</div>
+                        </div>
+                    </div>
+                    
+                    <div class="topic-section">
+                        <h3 class="topic-title">Authentication Mechanisms</h3>
+                        <div class="subtopics">
+                            <div class="subtopic">Form-based Authentication</div>
+                            <div class="subtopic">HTTP Basic Authentication</div>
+                            <div class="subtopic">JWT (JSON Web Tokens)</div>
+                            <div class="subtopic">OAuth 2.0 & OpenID Connect</div>
+                            <div class="subtopic">Session Management</div>
+                            <div class="subtopic">Remember Me</div>
+                        </div>
+                    </div>
+                    
+                    <div class="topic-section">
+                        <h3 class="topic-title">Authorization</h3>
+                        <div class="subtopics">
+                            <div class="subtopic">Role-Based Access Control (RBAC)</div>
+                            <div class="subtopic">Method-Level Security</div>
+                            <div class="subtopic">@PreAuthorize & @PostAuthorize</div>
+                            <div class="subtopic">Expression-Based Access Control</div>
+                            <div class="subtopic">ACL (Access Control Lists)</div>
+                        </div>
+                    </div>
+                    
+                    <div class="topic-section">
+                        <h3 class="topic-title">Web Security</h3>
+                        <div class="subtopics">
+                            <div class="subtopic">CSRF Protection</div>
+                            <div class="subtopic">CORS Configuration</div>
+                            <div class="subtopic">XSS Prevention</div>
+                            <div class="subtopic">Security Headers</div>
+                            <div class="subtopic">HTTPS/SSL/TLS</div>
+                            <div class="subtopic">Rate Limiting</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline">
+                    <span class="timeline-icon">⏱️</span>
+                    Duration: 5-6 weeks
+                </div>
+                
+                <div class="tips-section">
+                    <div class="tip-card interview-tip">
+                        <div class="tip-title">
+                            <span class="tip-icon">💡</span>
+                            Interview Focus
+                        </div>
+                        <p>Explain JWT vs sessions, understand OAuth2 flows, discuss common security vulnerabilities and prevention.</p>
+                    </div>
+                    <div class="tip-card project-tip">
+                        <div class="tip-title">
+                            <span class="tip-icon">🚀</span>
+                            Practice Project
+                        </div>
+                        <p>Implement complete authentication system with JWT, role-based authorization, and OAuth2 integration.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Phase 9: Microservices Architecture -->
+            <div class="phase-card">
+                <div class="phase-header">
+                    <div class="phase-number">9</div>
+                    <div>
+                        <h2 class="phase-title">Microservices Architecture</h2>
+                        <span class="difficulty advanced">Advanced</span>
+                    </div>
+                </div>
+                
+                <div class="topics-grid">
+                    <div class="topic-section">
+                        <h3 class="topic-title">Microservices Fundamentals</h3>
+                        <div class="subtopics">
+                            <div class="subtopic">Microservices vs Monolith</div>
+                            <div class="subtopic">Service Decomposition</div>
+                            <div class="subtopic">Database per Service</div>
+                            <div class="subtopic">API Gateway Pattern</div>
+                            <div class="subtopic">Service Communication</div>
+                        </div>
+                    </div>
+                    
+                    <div class="topic-section">
+                        <h3 class="topic-title">Spring Cloud</h3>
+                        <div class="subtopics">
+                            <div class="subtopic">Service Discovery (Eureka)</div>
+                            <div class="subtopic">API Gateway (Spring Cloud Gateway)</div>
+                            <div class="subtopic">Configuration Server</div>
+                            <div class="subtopic">Circuit Breaker (Resilience4j)</div>
+                            <div class="subtopic">Load Balancing</div>
+                            <div class="subtopic">Feign Client</div>
+                        </div>
+                    </div>
+                    
+                    <div class="topic-section">
+                        <h3 class="topic-title">Communication Patterns</h3>
+                        <div class="subtopics">
+                            <div class="subtopic">Synchronous (REST/GraphQL)</div>
+                            <div class="subtopic">Asynchronous Messaging</div>
+                            <div class="subtopic">Event Sourcing</div>
+                            <div class="subtopic">CQRS Pattern</div>
+                            <div class="subtopic">Saga Pattern</div>
+                        </div>
+                    </div>
+                    
+                    <div class="topic-section">
+                        <h3 class="topic-title">Message Brokers</h3>
+                        <div class="subtopics">
+                            <div class="subtopic">Apache Kafka</div>
+                            <div class="subtopic">RabbitMQ</div>
+                            <div class="subtopic">Spring Cloud Stream</div>
+                            <div class="subtopic">Message Patterns</div>
+                            <div class="subtopic">Event-Driven Architecture</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline">
+                    <span class="timeline-icon">⏱️</span>
+                    Duration: 8-10 weeks
+                </div>
+                
+                <div class="tips-section">
+                    <div class="tip-card interview-tip">
+                        <div class="tip-title">
+                            <span class="tip-icon">💡</span>
+                            Interview Focus
+                        </div>
+                        <p>Explain microservices challenges, understand distributed system problems, discuss service communication patterns.</p>
+                    </div>
+                    <div class="tip-card project-tip">
+                        <div class="tip-title">
+                            <span class="tip-icon">🚀</span>
+                            Practice Project
+                        </div>
+                        <p>Build a complete microservices ecosystem with service discovery, API gateway, and message-driven communication.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Phase 10: DevOps & Cloud -->
+            <div class="phase-card">
+                <div class="phase-header">
+                    <div class="phase-number">10</div>
+                    <div>
+                        <h2 class="phase-title">DevOps & Cloud</h2>
+                        <span class="difficulty advanced">Advanced</span>
+                    </div>
+                </div>
+                
+                <div class="topics-grid">
+                    <div class="topic-section">
+                        <h3 class="topic-title">Containerization</h3>
+                        <div class="subtopics">
+                            <div class="subtopic">Docker Fundamentals</div>
+                            <div class="subtopic">Dockerfile Best Practices</div>
+                            <div class="subtopic">Multi-stage Builds</div>
+                            <div class="subtopic">Docker Compose</div>
+                            <div class="subtopic">Container Orchestration</div>
+                        </div>
+                    </div>
+                    
+                    <div class="topic-section">
+                        <h3 class="topic-title">Kubernetes</h3>
+                        <div class="subtopics">
+                            <div class="subtopic">K8s Architecture</div>
+                            <div class="subtopic">Pods, Services, Deployments</div>
+                            <div class="subtopic">ConfigMaps & Secrets</div>
+                            <div class="subtopic">Ingress Controllers</div>
+                            <div class="subtopic">Helm Charts</div>
+                            <div class="subtopic">Monitoring & Logging</div>
+                        </div>
+                    </div>
+                    
+                    <div class="topic-section">
+                        <h3 class="topic-title">CI/CD Pipelines</h3>
+                        <div class="subtopics">
+                            <div class="subtopic">Jenkins</div>
+                            <div class="subtopic">GitHub Actions</div>
+                            <div class="subtopic">GitLab CI/CD</div>
+                            <div class="subtopic">Pipeline as Code</div>
+                            <div class="subtopic">Automated Testing</div>
+                            <div class="subtopic">Deployment Strategies</div>
+                        </div>
+                    </div>
+                    
+                    <div class="topic-section">
+                        <h3 class="topic-title">Cloud Platforms</h3>
+                        <div class="subtopics">
+                            <div class="subtopic">AWS (EC2, RDS, S3, Lambda)</div>
+                            <div class="subtopic">Azure (App Service, SQL Database)</div>
+                            <div class="subtopic">Google Cloud Platform</div>
+                            <div class="subtopic">Infrastructure as Code</div>
+                            <div class="subtopic">Serverless Computing</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline">
+                    <span class="timeline-icon">⏱️</span>
+                    Duration: 6-8 weeks
+                </div>
+                
+                <div class="tips-section">
+                    <div class="tip-card interview-tip">
+                        <div class="tip-title">
+                            <span class="tip-icon">💡</span>
+                            Interview Focus
+                        </div>
+                        <p>Understand containerization benefits, explain CI/CD pipeline stages, discuss cloud architecture patterns.</p>
+                    </div>
+                    <div class="tip-card project-tip">
+                        <div class="tip-title">
+                            <span class="tip-icon">🚀</span>
+                            Practice Project
+                        </div>
+                        <p>Containerize microservices, deploy to Kubernetes, and set up complete CI/CD pipeline with automated testing.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Phase 11: Testing Strategies -->
+            <div class="phase-card">
+                <div class="phase-header">
+                    <div class="phase-number">11</div>
+                    <div>
+                        <h2 class="phase-title">Testing Strategies</h2>
+                        <span class="difficulty advanced">Advanced</span>
+                    </div>
+                </div>
+                
+                <div class="topics-grid">
+                    <div class="topic-section">
+                        <h3 class="topic-title">Unit Testing</h3>
+                        <div class="subtopics">
+                            <div class="subtopic">JUnit 5</div>
+                            <div class="subtopic">Mockito</div>
+                            <div class="subtopic">Test-Driven Development</div>
+                            <div class="subtopic">AssertJ</div>
+                            <div class="subtopic">Test Coverage</div>
+                            <div class="subtopic">Parametrized Tests</div>
+                        </div>
+                    </div>
+                    
+                    <div class="topic-section">
+                        <h3 class="topic-title">Integration Testing</h3>
+                        <div class="subtopics">
+                            <div class="subtopic">Spring Boot Test</div>
+                            <div class="subtopic">@MockBean & @SpyBean</div>
+                            <div class="subtopic">TestContainers</div>
+                            <div class="subtopic">Database Testing</div>
+                            <div class="subtopic">Web Layer Testing</div>
+                            <div class="subtopic">Repository Testing</div>
+                        </div>
+                    </div>
+                    
+                    <div class="topic-section">
+                        <h3 class="topic-title">Advanced Testing</h3>
+                        <div class="subtopics">
+                            <div class="subtopic">Contract Testing</div>
+                            <div class="subtopic">Spring Cloud Contract</div>
+                            <div class="subtopic">Consumer Driven Contracts</div>
+                            <div class="subtopic">API Testing</div>
+                            <div class="subtopic">Load Testing</div>
+                            <div class="subtopic">Security Testing</div>
+                        </div>
+                    </div>
+                    
+                    <div class="topic-section">
+                        <h3 class="topic-title">Testing Best Practices</h3>
+                        <div class="subtopics">
+                            <div class="subtopic">Test Pyramid</div>
+                            <div class="subtopic">Test Doubles</div>
+                            <div class="subtopic">Continuous Testing</div>
+                            <div class="subtopic">Test Data Management</div>
+                            <div class="subtopic">Flaky Test Prevention</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline">
+                    <span class="timeline-icon">⏱️</span>
+                    Duration: 4-5 weeks
+                </div>
+                
+                <div class="tips-section">
+                    <div class="tip-card interview-tip">
+                        <div class="tip-title">
+                            <span class="tip-icon">💡</span>
+                            Interview Focus
+                        </div>
+                        <p>Explain testing pyramid, understand mocking strategies, discuss TDD benefits and challenges.</p>
+                    </div>
+                    <div class="tip-card project-tip">
+                        <div class="tip-title">
+                            <span class="tip-icon">🚀</span>
+                            Practice Project
+                        </div>
+                        <p>Achieve 80%+ test coverage on existing project with unit, integration, and contract tests.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Phase 12: Advanced Topics -->
+            <div class="phase-card">
+                <div class="phase-header">
+                    <div class="phase-number">12</div>
+                    <div>
+                        <h2 class="phase-title">Advanced Topics</h2>
+                        <span class="difficulty expert">Expert</span>
+                    </div>
+                </div>
+                
+                <div class="topics-grid">
+                    <div class="topic-section">
+                        <h3 class="topic-title">Reactive Programming</h3>
+                        <div class="subtopics">
+                            <div class="subtopic">Reactive Streams</div>
+                            <div class="subtopic">Project Reactor</div>
+                            <div class="subtopic">Spring WebFlux</div>
+                            <div class="subtopic">Reactive Database Access</div>
+                            <div class="subtopic">Backpressure Handling</div>
+                        </div>
+                    </div>
+                    
+                    <div class="topic-section">
+                        <h3 class="topic-title">Performance & Monitoring</h3>
+                        <div class="subtopics">
+                            <div class="subtopic">Application Performance Monitoring</div>
+                            <div class="subtopic">Distributed Tracing (Zipkin/Jaeger)</div>
+                            <div class="subtopic">Metrics (Micrometer, Prometheus)</div>
+                            <div class="subtopic">JVM Tuning</div>
+                            <div class="subtopic">Memory Management</div>
+                            <div class="subtopic">Profiling Tools</div>
+                        </div>
+                    </div>
+                    
+                    <div class="topic-section">
+                        <h3 class="topic-title">Caching Strategies</h3>
+                        <div class="subtopics">
+                            <div class="subtopic">Spring Cache Abstraction</div>
+                            <div class="subtopic">Redis Advanced Features</div>
+                            <div class="subtopic">Hazelcast</div>
+                            <div class="subtopic">Cache Patterns & Strategies</div>
+                            <div class="subtopic">Distributed Caching</div>
+                        </div>
+                    </div>
+                    
+                    <div class="topic-section">
+                        <h3 class="topic-title">Advanced Patterns</h3>
+                        <div class="subtopics">
+                            <div class="subtopic">Domain-Driven Design</div>
+                            <div class="subtopic">Hexagonal Architecture</div>
+                            <div class="subtopic">Event Sourcing</div>
+                            <div class="subtopic">CQRS Implementation</div>
+                            <div class="subtopic">Clean Architecture</div>
+                        </div>
+                    </div>
+                    
+                    <div class="topic-section">
+                        <h3 class="topic-title">Emerging Technologies</h3>
+                        <div class="subtopics">
+                            <div class="subtopic">GraalVM & Native Images</div>
+                            <div class="subtopic">Virtual Threads (Project Loom)</div>
+                            <div class="subtopic">Records & Pattern Matching</div>
+                            <div class="subtopic">AI/ML Integration</div>
+                            <div class="subtopic">Blockchain Basics</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline">
+                    <span class="timeline-icon">⏱️</span>
+                    Duration: 8-12 weeks
+                </div>
+                
+                <div class="tips-section">
+                    <div class="tip-card interview-tip">
+                        <div class="tip-title">
+                            <span class="tip-icon">💡</span>
+                            Interview Focus
+                        </div>
+                        <p>Understand reactive programming concepts, explain performance optimization strategies, discuss architectural patterns.</p>
+                    </div>
+                    <div class="tip-card project-tip">
+                        <div class="tip-title">
+                            <span class="tip-icon">🚀</span>
+                            Practice Project
+                        </div>
+                        <p>Build a high-performance reactive application with comprehensive monitoring and advanced caching strategies.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="learning-path">
+            <h2 class="path-title">🎯 Career Progression Path</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-top: 20px;">
+                <div style="background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 20px; border-radius: 15px;">
+                    <h3>Junior Developer (0-2 years)</h3>
+                    <p>Complete Phases 1-6. Focus on Java fundamentals, Spring basics, and database operations.</p>
+                </div>
+                <div style="background: linear-gradient(135deg, #f093fb, #f5576c); color: white; padding: 20px; border-radius: 15px;">
+                    <h3>Mid-Level Developer (2-4 years)</h3>
+                    <p>Master Phases 7-9. Build expertise in API design, security, and microservices architecture.</p>
+                </div>
+                <div style="background: linear-gradient(135deg, #4facfe, #00f2fe); color: white; padding: 20px; border-radius: 15px;">
+                    <h3>Senior Developer (4+ years)</h3>
+                    <p>Excel in Phases 10-12. Lead architecture decisions, implement DevOps practices, and mentor junior developers.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="learning-path">
+            <h2 class="path-title">📚 Essential Resources & Tools</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; margin-top: 20px;">
+                <div style="background: #f8f9fa; padding: 15px; border-radius: 10px; border-left: 4px solid #667eea;">
+                    <h4>📖 Books</h4>
+                    <ul style="margin-top: 10px; font-size: 0.9rem;">
+                        <li>Effective Java by Joshua Bloch</li>
+                        <li>Spring in Action by Craig Walls</li>
+                        <li>Microservices Patterns by Chris Richardson</li>
+                        <li>Clean Code by Robert Martin</li>
+                    </ul>
+                </div>
+                <div style="background: #f8f9fa; padding: 15px; border-radius: 10px; border-left: 4px solid #28a745;">
+                    <h4>🛠️ Development Tools</h4>
+                    <ul style="margin-top: 10px; font-size: 0.9rem;">
+                        <li>IntelliJ IDEA / Eclipse</li>
+                        <li>Maven / Gradle</li>
+                        <li>Docker & Docker Compose</li>
+                        <li>Postman / Insomnia</li>
+                    </ul>
+                </div>
+                <div style="background: #f8f9fa; padding: 15px; border-radius: 10px; border-left: 4px solid #dc3545;">
+                    <h4>☁️ Cloud & DevOps</h4>
+                    <ul style="margin-top: 10px; font-size: 0.9rem;">
+                        <li>AWS / Azure / GCP</li>
+                        <li>Kubernetes</li>
+                        <li>Jenkins / GitHub Actions</li>
+                        <li>Terraform</li>
+                    </ul>
+                </div>
+                <div style="background: #f8f9fa; padding: 15px; border-radius: 10px; border-left: 4px solid #6c757d;">
+                    <h4>🔧 Monitoring & Testing</h4>
+                    <ul style="margin-top: 10px; font-size: 0.9rem;">
+                        <li>JUnit 5 / Mockito</li>
+                        <li>TestContainers</li>
+                        <li>Prometheus / Grafana</li>
+                        <li>ELK Stack</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="learning-path">
+            <h2 class="path-title">💼 Industry-Specific Specializations</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-top: 20px;">
+                <div style="background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 20px; border-radius: 15px;">
+                    <h3>🏦 FinTech/Banking</h3>
+                    <ul style="margin-top: 10px;">
+                        <li>Payment Gateway Integration</li>
+                        <li>Blockchain & Cryptocurrency</li>
+                        <li>PCI DSS Compliance</li>
+                        <li>High-Frequency Trading Systems</li>
+                        <li>Risk Management Systems</li>
+                    </ul>
+                </div>
+                <div style="background: linear-gradient(135deg, #f093fb, #f5576c); color: white; padding: 20px; border-radius: 15px;">
+                    <h3>🛒 E-commerce</h3>
+                    <ul style="margin-top: 10px;">
+                        <li>Inventory Management</li>
+                        <li>Order Processing Systems</li>
+                        <li>Recommendation Engines</li>
+                        <li>Payment Processing</li>
+                        <li>Search & Analytics</li>
+                    </ul>
+                </div>
+                <div style="background: linear-gradient(135deg, #4facfe, #00f2fe); color: white; padding: 20px; border-radius: 15px;">
+                    <h3>🏥 Healthcare</h3>
+                    <ul style="margin-top: 10px;">
+                        <li>HIPAA Compliance</li>
+                        <li>HL7 FHIR Standards</li>
+                        <li>Electronic Health Records</li>
+                        <li>Medical Device Integration</li>
+                        <li>Telemedicine Platforms</li>
+                    </ul>
+                </div>
+                <div style="background: linear-gradient(135deg, #fa709a, #fee140); color: white; padding: 20px; border-radius: 15px;">
+                    <h3>🎮 Gaming/Media</h3>
+                    <ul style="margin-top: 10px;">
+                        <li>Real-time Multiplayer</li>
+                        <li>Content Delivery Networks</li>
+                        <li>Streaming Protocols</li>
+                        <li>Game Analytics</li>
+                        <li>User Generated Content</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="learning-path">
+            <h2 class="path-title">🚀 Project-Based Learning Milestones</h2>
+            <div style="display: grid; gap: 20px; margin-top: 20px;">
+                <div style="background: rgba(255, 255, 255, 0.95); padding: 25px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);">
+                    <h3 style="color: #2c3e50; margin-bottom: 15px;">🎯 Milestone Projects</h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 15px;">
+                        <div style="background: #e8f5e8; padding: 15px; border-radius: 10px; border-left: 4px solid #27ae60;">
+                            <h4>Beginner: Task Management System</h4>
+                            <p style="font-size: 0.9rem; margin-top: 8px;">Build a CRUD application with Spring Boot, JPA, and MySQL. Include user authentication and basic REST APIs.</p>
+                        </div>
+                        <div style="background: #fff3cd; padding: 15px; border-radius: 10px; border-left: 4px solid #f39c12;">
+                            <h4>Intermediate: E-commerce Backend</h4>
+                            <p style="font-size: 0.9rem; margin-top: 8px;">Create microservices for products, orders, users, and payments. Implement JWT security, caching, and API documentation.</p>
+                        </div>
+                        <div style="background: #f8d7da; padding: 15px; border-radius: 10px; border-left: 4px solid #e74c3c;">
+                            <h4>Advanced: Social Media Platform</h4>
+                            <p style="font-size: 0.9rem; margin-top: 8px;">Build reactive microservices with Spring WebFlux, event-driven architecture with Kafka, and real-time features.</p>
+                        </div>
+                        <div style="background: #d1ecf1; padding: 15px; border-radius: 10px; border-left: 4px solid #17a2b8;">
+                            <h4>Expert: Trading Platform</h4>
+                            <p style="font-size: 0.9rem; margin-top: 8px;">High-performance system with reactive programming, distributed caching, real-time data processing, and comprehensive monitoring.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="learning-path">
+            <h2 class="path-title">🎯 Interview Preparation Strategy</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 20px; margin-top: 20px;">
+                <div style="background: rgba(255, 255, 255, 0.95); padding: 25px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);">
+                    <h3 style="color: #2c3e50; margin-bottom: 15px;">📝 Technical Interview Topics</h3>
+                    <div style="display: grid; gap: 12px;">
+                        <div style="background: #f8f9fa; padding: 12px; border-radius: 8px; border-left: 3px solid #667eea;">
+                            <strong>Core Java (40%)</strong>
+                            <p style="font-size: 0.9rem; margin-top: 5px;">OOP, Collections, Multithreading, JVM internals, Memory management</p>
+                        </div>
+                        <div style="background: #f8f9fa; padding: 12px; border-radius: 8px; border-left: 3px solid #28a745;">
+                            <strong>Spring Ecosystem (30%)</strong>
+                            <p style="font-size: 0.9rem; margin-top: 5px;">IoC, AOP, Security, Boot, Data, Cloud components</p>
+                        </div>
+                        <div style="background: #f8f9fa; padding: 12px; border-radius: 8px; border-left: 3px solid #dc3545;">
+                            <strong>System Design (20%)</strong>
+                            <p style="font-size: 0.9rem; margin-top: 5px;">Microservices, Database design, Scalability, Caching strategies</p>
+                        </div>
+                        <div style="background: #f8f9fa; padding: 12px; border-radius: 8px; border-left: 3px solid #6c757d;">
+                            <strong>Problem Solving (10%)</strong>
+                            <p style="font-size: 0.9rem; margin-top: 5px;">Algorithms, Data structures, Coding challenges</p>
+                        </div>
+                    </div>
+                </div>
+                <div style="background: rgba(255, 255, 255, 0.95); padding: 25px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);">
+                    <h3 style="color: #2c3e50; margin-bottom: 15px;">💡 Interview Success Tips</h3>
+                    <ul style="display: grid; gap: 10px;">
+                        <li style="display: flex; align-items: flex-start;"><span style="color: #667eea; margin-right: 10px;">✅</span>Practice coding on whiteboard/paper</li>
+                        <li style="display: flex; align-items: flex-start;"><span style="color: #667eea; margin-right: 10px;">✅</span>Explain your thought process clearly</li>
+                        <li style="display: flex; align-items: flex-start;"><span style="color: #667eea; margin-right: 10px;">✅</span>Discuss trade-offs and alternatives</li>
+                        <li style="display: flex; align-items: flex-start;"><span style="color: #667eea; margin-right: 10px;">✅</span>Ask clarifying questions</li>
+                        <li style="display: flex; align-items: flex-start;"><span style="color: #667eea; margin-right: 10px;">✅</span>Have real project examples ready</li>
+                        <li style="display: flex; align-items: flex-start;"><span style="color: #667eea; margin-right: 10px;">✅</span>Stay updated with latest technologies</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="progress-tracker">
+            <h3 style="margin-bottom: 15px; color: #2c3e50;">🏆 Completion Certificate</h3>
+            <div style="background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 30px; border-radius: 15px; text-align: center;">
+                <h2 style="margin-bottom: 15px;">🎉 Congratulations!</h2>
+                <p style="font-size: 1.2rem; margin-bottom: 15px;">You have successfully completed the Complete Java Backend Developer Roadmap</p>
+                <p style="opacity: 0.9;">You are now ready to take on Senior Java Backend Developer roles at top technology companies!</p>
+                <div style="margin-top: 20px; display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
+                    <div style="background: rgba(255, 255, 255, 0.2); padding: 10px 15px; border-radius: 8px;">
+                        <strong>Skills Mastered: 180+</strong>
+                    </div>
+                    <div style="background: rgba(255, 255, 255, 0.2); padding: 10px 15px; border-radius: 8px;">
+                        <strong>Projects Completed: 12+</strong>
+                    </div>
+                    <div style="background: rgba(255, 255, 255, 0.2); padding: 10px 15px; border-radius: 8px;">
+                        <strong>Career Level: Senior</strong>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer style="text-align: center; padding: 30px; background: rgba(255, 255, 255, 0.95); border-radius: 20px; margin-top: 30px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);">
+            <h3 style="color: #2c3e50; margin-bottom: 15px;">🚀 Ready to Start Your Journey?</h3>
+            <p style="font-size: 1.1rem; color: #666; margin-bottom: 20px;">
+                This roadmap is your complete guide to becoming a professional Java Backend Developer. 
+                Each phase builds upon the previous one, ensuring you have a solid foundation.
+            </p>
+            <div style="display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; margin-bottom: 20px;">
+                <div style="background: #e8f5e8; color: #27ae60; padding: 8px 15px; border-radius: 20px; font-weight: bold;">
+                    ✅ 100% Industry Relevant
+                </div>
+                <div style="background: #e3f2fd; color: #1976d2; padding: 8px 15px; border-radius: 20px; font-weight: bold;">
+                    ✅ No Missing Topics
+                </div>
+                <div style="background: #fff3e0; color: #f57c00; padding: 8px 15px; border-radius: 20px; font-weight: bold;">
+                    ✅ Project-Based Learning
+                </div>
+                <div style="background: #fce4ec; color: #c2185b; padding: 8px 15px; border-radius: 20px; font-weight: bold;">
+                    ✅ Interview Ready
+                </div>
+            </div>
+            <p style="color: #888; font-size: 0.9rem;">
+                © 2024 Complete Java Backend Developer Roadmap | Save this page and track your progress!
+            </p>
+        </footer>
+    </div>
+
+    <script>
+        // Interactive progress tracking
+        let completedTopics = JSON.parse(localStorage.getItem('completedTopics') || '[]');
+        let totalTopics = document.querySelectorAll('.subtopic').length;
+        
+        function updateProgress() {
+            const progressPercentage = Math.round((completedTopics.length / totalTopics) * 100);
+            const progressFill = document.getElementById('progressFill');
+            const progressText = document.getElementById('progressText');
+            
+            progressFill.style.width = progressPercentage + '%';
+            progressText.textContent = `${progressPercentage}% Complete (${completedTopics.length}/${totalTopics} topics)`;
+            
+            // Save progress
+            localStorage.setItem('completedTopics', JSON.stringify(completedTopics));
+        }
+        
+        // Initialize progress
+        document.querySelectorAll('.subtopic').forEach((subtopic, index) => {
+            subtopic.dataset.index = index;
+            
+            if (completedTopics.includes(index)) {
+                subtopic.classList.add('completed');
+            }
+            
+            subtopic.addEventListener('click', function() {
+                const index = parseInt(this.dataset.index);
+                
+                if (this.classList.contains('completed')) {
+                    this.classList.remove('completed');
+                    completedTopics = completedTopics.filter(i => i !== index);
+                } else {
+                    this.classList.add('completed');
+                    completedTopics.push(index);
+                }
+                
+                updateProgress();
+            });
+        });
+        
+        // Initialize mermaid
+        mermaid.initialize({ 
+            startOnLoad: true, 
+            theme: 'default',
+            securityLevel: 'loose',
+            flowchart: {
+                useMaxWidth: true,
+                htmlLabels: true
+            }
+        });
+        
+        updateProgress();
+        
+        // Add smooth scrolling for better UX
+        document.addEventListener('DOMContentLoaded', function() {
+            const cards = document.querySelectorAll('.phase-card');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            });
+            
+            cards.forEach((card) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(card);
+            });
+        });
+    </script>
+</body>
+</html>

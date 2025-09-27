@@ -9,6 +9,185 @@ Here’s the ultimate **JDBC Cheat Sheet**:
 
 ---
 
+# 🚀 Quick Steps to Add MySQL Connector to Java
+
+1. **Download** → Get *MySQL Connector/J (Platform Independent)* from MySQL website.
+2. **Extract** → Unzip and locate `mysql-connector-j-8.x.x.jar`.
+3. **Add to Project** → `File → Project Structure → Libraries → + → Java → Select JAR → Apply`.
+4. **Check** → JAR appears in **External Libraries**.
+5. **Code** → Use `DriverManager.getConnection(...)` to connect to MySQL.
+
+---
+Sure! Let’s dive deep into **Java `Properties`**, what it really is, how it works, and why it’s widely used for configuration, especially in JDBC and Spring. I’ll break it down step by step.
+
+---
+
+## **1️⃣ What is `Properties` in Java?**
+
+* `Properties` is a **subclass of `Hashtable<Object, Object>`**.
+* It represents a **set of key-value pairs**, where both **keys and values are Strings**.
+* It’s mainly used for **configuration data**, like database credentials, file paths, or application settings.
+
+**Declaration:**
+
+```java
+Properties props = new Properties();
+```
+
+---
+
+## **2️⃣ How `Properties` stores data**
+
+* Internally, it works like a **hash table**.
+* Key and value must **not be `null`**.
+* Example:
+
+```java
+Properties props = new Properties();
+props.setProperty("user", "root");
+props.setProperty("password", "secret");
+```
+
+* `props` now stores:
+
+| Key      | Value  |
+| -------- | ------ |
+| user     | root   |
+| password | secret |
+
+* Retrieval is simple:
+
+```java
+String user = props.getProperty("user"); // "root"
+String pass = props.getProperty("password"); // "secret"
+```
+
+---
+
+## **3️⃣ Loading properties from a file**
+
+* Usually, properties are stored in `.properties` files:
+
+**`application.properties`**
+
+```properties
+url=jdbc:mysql://localhost:3306/todoapp
+username=root
+password=secret
+```
+
+* Load it in Java:
+
+```java
+Properties props = new Properties();
+try (InputStream in = getClass().getClassLoader().getResourceAsStream("application.properties")) {
+    props.load(in);
+}
+
+String url = props.getProperty("url");
+String username = props.getProperty("username");
+String password = props.getProperty("password");
+```
+
+* **Key points:**
+
+  1. The keys and values are read as **Strings**.
+  2. Can throw `IOException` if file not found.
+  3. Supports **default values**:
+
+```java
+String dbUser = props.getProperty("username", "defaultUser");
+```
+
+---
+
+## **4️⃣ Why `Properties` is used in JDBC**
+
+When you call:
+
+```java
+Properties p = new Properties();
+p.setProperty("user", "root");
+p.setProperty("password", "secret");
+Connection conn = DriverManager.getConnection(url, p);
+```
+
+* `DriverManager` reads the `Properties` to get credentials and other connection options.
+* Advantages:
+
+  * Avoids putting sensitive info in URL.
+  * Can dynamically add options like SSL, autoReconnect, characterEncoding:
+
+```java
+p.setProperty("useSSL", "false");
+p.setProperty("autoReconnect", "true");
+```
+
+---
+
+## **5️⃣ Other methods in `Properties`**
+
+| Method                                         | Description                                           |
+| ---------------------------------------------- | ----------------------------------------------------- |
+| `setProperty(String key, String value)`        | Adds or updates a property                            |
+| `getProperty(String key)`                      | Returns value as String, or null if key doesn’t exist |
+| `getProperty(String key, String defaultValue)` | Returns default if key missing                        |
+| `load(InputStream in)`                         | Reads key-value pairs from a `.properties` file       |
+| `store(OutputStream out, String comments)`     | Writes properties to file with optional comment       |
+| `stringPropertyNames()`                        | Returns all keys as a `Set<String>`                   |
+
+---
+
+## **6️⃣ Key points and concepts**
+
+1. **String-based configuration:** Both key and value are Strings.
+2. **Persistence:** Can load from or save to `.properties` file.
+3. **Dynamic usage:** Can add or modify properties at runtime.
+4. **Type safety:** You get Strings, so for numbers/booleans you need conversion:
+
+```java
+int port = Integer.parseInt(props.getProperty("db.port", "3306"));
+boolean useSSL = Boolean.parseBoolean(props.getProperty("useSSL", "false"));
+```
+
+5. **Hierarchical configs:** You can load multiple `.properties` and override values dynamically.
+
+---
+
+### **7️⃣ Conceptually**
+
+Think of `Properties` as:
+
+> A **dictionary of settings** that your program can read and update **without hardcoding values**.
+
+* Keys = names of settings (`url`, `user`, `password`)
+* Values = actual configuration data (`jdbc:mysql://localhost:3306/db`, `root`, `secret`)
+* You can **change values without recompiling code**, just by editing the `.properties` file.
+
+---
+
+### **8️⃣ How Spring uses `Properties`**
+
+* Spring reads `.properties` files and injects values into beans via `@Value` or `Environment`.
+* Behind the scenes, Spring uses `Properties` (or a similar map structure) to store the key-value pairs.
+* Example:
+
+```java
+@Value("${url}")
+private String url;
+```
+
+Spring reads `url` from a `Properties` object internally.
+
+---
+
+✅ **Summary**
+
+* `Properties` = String-based key-value store for configuration.
+* Can be loaded from file, memory, or set programmatically.
+* Widely used for JDBC, app settings, and Spring property injection.
+* Supports defaults, runtime modification, and persistence.
+---
 # 🔑 JDBC Sticky Notes
 
 | **Method**                                       | **What it is**                 | **When to use**                       | **Return type**       | **Rules / Notes**                                                            |
@@ -544,4 +723,251 @@ rs.deleteRow(); // deletes current row from DB
 
 ---
 
-Would you like me to also make a **mind-map style diagram (like your tree format)** of all ResultSet features so you can keep it as a revision cheat sheet?
+# 🚀 HikariCP: The Ultimate In-Depth Guide
+
+Alright, let's dive deep into HikariCP. I'll give you the complete, no-bullshit explanation that covers everything you need to know - from basic concepts to advanced configuration parameters.
+
+## 🔥 What Makes HikariCP Special
+
+HikariCP isn't just "another connection pool" - it's engineered for performance:
+
+1. **Bytecode-level optimization**: They've hand-optimized the bytecode to minimize instructions
+2. **Zero-overhead**: Unlike other pools, HikariCP doesn't use synchronized blocks unnecessarily
+3. **Intelligent defaults**: Most settings work optimally out of the box
+4. **Lightweight**: ~130KB JAR with minimal dependencies
+
+Let's break down the configuration parameters in a way that actually makes sense.
+
+## 📊 Core Configuration Parameters Deep Dive
+
+### 1. `maximumPoolSize`
+**What it does**: Maximum number of connections in the pool
+**Default**: 10
+**Reality check**:
+```java
+// This is the formula that actually works for most cases:
+// (number_of_cores * 2) + number_of_effective_disks
+// For a 4-core server with SSD: (4 * 2) + 1 = 9
+config.setMaximumPoolSize(9);
+```
+
+**Why not more?** More connections ≠ better performance. Your database has limited resources. Too many connections cause:
+- Context switching overhead
+- Memory pressure on database
+- Lock contention
+
+### 2. `minimumIdle`
+**What it does**: Minimum number of idle connections maintained
+**Default**: Same as maximumPoolSize
+**Pro tip**: For most production systems, set this lower than maximum:
+```java
+config.setMinimumIdle(5); // Keep 5 connections warm
+```
+Why? Because maintaining idle connections has cost. Let HikariCP scale down during low traffic.
+
+### 3. `connectionTimeout`
+**What it does**: Maximum time to wait for a connection from pool
+**Default**: 30000ms (30 seconds)
+**Reality**: This is probably too long for most applications:
+```java
+config.setConnectionTimeout(5000); // 5 seconds max wait
+```
+If you're waiting 30 seconds for a connection, your system is already fucked. Fail fast and let your circuit breaker handle it.
+
+### 4. `idleTimeout`
+**What it does**: Maximum time a connection can sit idle in pool
+**Default**: 600000ms (10 minutes)
+**Smart setting**:
+```java
+config.setIdleTimeout(300000); // 5 minutes
+```
+Connections that sit idle too long might become stale. Don't let them linger.
+
+### 5. `maxLifetime`
+**What it does**: Maximum lifetime of a connection
+**Default**: 1800000ms (30 minutes)
+**Database reality**: Some databases (like MySQL) have wait_timeout that kills idle connections. Set this slightly lower:
+```java
+// If your DB timeout is 8 hours (28800000ms)
+config.setMaxLifetime(27000000); // 7.5 hours - recycle before DB kills
+```
+This prevents "connection closed" errors from stale connections.
+
+### 6. `leakDetectionThreshold`
+**What it does**: Time before HikariCP logs potential connection leaks
+**Default**: 0 (disabled)
+**Must enable in development**:
+```java
+config.setLeakDetectionThreshold(10000); // 10 seconds
+```
+This will catch those fucking connection leaks where you forgot to close().
+
+## 🛠️ Advanced Configuration
+
+### 7. `connectionTestQuery`
+**When to use**: Only for older JDBC drivers that don't support `isValid()`
+**Default**: None (uses isValid() if available)
+```java
+// Only for shitty legacy drivers:
+config.setConnectionTestQuery("SELECT 1");
+```
+
+### 8. `dataSourceClassName` vs `jdbcUrl`
+**The right way**:
+```java
+// Use jdbcUrl for most cases
+config.setJdbcUrl("jdbc:mysql://localhost:3306/mydb");
+
+// Use dataSourceClassName only if you need DataSource-specific properties
+config.setDataSourceClassName("com.mysql.cj.jdbc.MysqlDataSource");
+config.addDataSourceProperty("serverName", "localhost");
+config.addDataSourceProperty("databaseName", "mydb");
+```
+
+### 9. `readOnly`, `autoCommit`, `isolationLevel`
+**Transaction control**:
+```java
+// Explicitly set these if your app needs consistency
+config.setReadOnly(false);
+config.setAutoCommit(true);
+config.setTransactionIsolation("TRANSACTION_READ_COMMITTED");
+```
+
+### 10. `connectionInitSql`
+**For session setup**:
+```java
+// Run this SQL when connection is created
+config.setConnectionInitSql("SET time_zone = '+00:00'");
+```
+
+## 🔍 How HikariCP Actually Works Internally
+
+### The Connection Lifecycle:
+1. **Borrow**: `getConnection()` - gets connection from pool or creates new one
+2. **Use**: Application uses the connection
+3. **Return**: `close()` - returns connection to pool
+4. **Validate**: Connection tested before being reused
+5. **Evict**: Old/stale connections removed
+
+### The Secret Sauce - FastList:
+HikariCP uses a custom `FastList` instead of `ArrayList`:
+- Removes range checking for `get()`
+- Custom `remove()` method that starts from end (since connections are usually closed in reverse order)
+
+### Why It's Faster:
+- No synchronized blocks in hot paths
+- Minimal CPU instructions per operation
+- Smart connection validation (only when needed)
+
+## 🚨 Common Fuck-ups and How to Avoid Them
+
+### 1. The Connection Leak
+```java
+// WRONG - connection never closed if exception occurs
+Connection conn = dataSource.getConnection();
+stmt = conn.createStatement();
+rs = stmt.executeQuery("SELECT * FROM users");
+// Forget to close conn? Fucked.
+
+// RIGHT - use try-with-resources
+try (Connection conn = dataSource.getConnection();
+     Statement stmt = conn.createStatement();
+     ResultSet rs = stmt.executeQuery("SELECT * FROM users")) {
+    // use resources
+}
+```
+
+### 2. Wrong Pool Size Calculation
+```java
+// WRONG - just guessing
+config.setMaximumPoolSize(100); // Because bigger must be better, right?
+
+// RIGHT - based on actual resources
+// Formula: connections = (core_count * 2) + effective_spindle_count
+// For 8-core CPU with SSD: (8 * 2) + 1 = 17
+config.setMaximumPoolSize(17);
+```
+
+### 3. Ignoring Database Limits
+```java
+// Check your database's max_connections setting first!
+// If MySQL max_connections = 100, don't set pool size to 90
+// Leave room for admin connections, other apps, etc.
+config.setMaximumPoolSize(80); // Safe margin
+```
+
+## 📈 Monitoring and Metrics
+
+### Enable JMX:
+```java
+config.setRegisterMbeans(true);
+```
+
+### Check Pool Status:
+```java
+HikariPoolMXBean poolProxy = dataSource.getHikariPoolMXBean();
+System.out.println("Active connections: " + poolProxy.getActiveConnections());
+System.out.println("Idle connections: " + poolProxy.getIdleConnections());
+System.out.println("Threads awaiting connection: " + poolProxy.getThreadsAwaitingConnection());
+```
+
+### Health Check Metrics:
+- `pool.Wait` - histogram of wait times for connections
+- `pool.Usage` - histogram of connection usage time
+- `pool.ConnectionCreation` - connection creation time
+
+## 🧪 Production Ready Configuration
+
+Here's a battle-tested configuration for MySQL in production:
+
+```java
+HikariConfig config = new HikariConfig();
+config.setJdbcUrl("jdbc:mysql://localhost:3306/mydb");
+config.setUsername("user");
+config.setPassword("password");
+config.setMaximumPoolSize(20);
+config.setMinimumIdle(5);
+config.setConnectionTimeout(3000); // 3 seconds
+config.setIdleTimeout(600000); // 10 minutes
+config.setMaxLifetime(1800000); // 30 minutes
+config.setLeakDetectionThreshold(60000); // 1 minute for production
+config.setConnectionTestQuery("/* Health Check */ SELECT 1");
+config.setPoolName("MyAppPool");
+
+// MySQL-specific optimizations
+config.addDataSourceProperty("cachePrepStmts", "true");
+config.addDataSourceProperty("prepStmtCacheSize", "250");
+config.addDataSourceProperty("prepStmtCacheSqlLimit", "2048");
+config.addDataSourceProperty("useServerPrepStmts", "true");
+config.addDataSourceProperty("useLocalSessionState", "true");
+config.addDataSourceProperty("rewriteBatchedStatements", "true");
+config.addDataSourceProperty("cacheResultSetMetadata", "true");
+config.addDataSourceProperty("cacheServerConfiguration", "true");
+config.addDataSourceProperty("elideSetAutoCommits", "true");
+config.addDataSourceProperty("maintainTimeStats", "false");
+
+HikariDataSource dataSource = new HikariDataSource(config);
+```
+
+## 💡 Interview Gold - What They Really Want to Hear
+
+When they ask "Why HikariCP?" - hit them with:
+
+1. "It's optimized at the bytecode level with minimal CPU instructions per operation"
+2. "Uses custom FastList that eliminates range checking in hot paths"
+3. "Intelligent connection lifecycle management with proper validation"
+4. "Near-zero overhead compared to traditional pools that use excessive synchronization"
+5. "Smart defaults that work for most production scenarios without tuning"
+
+## 🎯 The Bottom Line
+
+HikariCP isn't magic - it's just well-engineered software that follows good principles:
+
+1. **Minimize overhead** - every operation is optimized
+2. **Fail fast** - don't wait forever for connections
+3. **Be resource-aware** - respect database limits
+4. **Provide visibility** - good monitoring and metrics
+5. **Smart defaults** - works well without complex configuration
+
+Remember: The best connection pool configuration is the one that matches your actual workload and database capacity. Don't just copy-paste settings - understand what they do and tune them for your specific environment.
+
